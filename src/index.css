@@ -1,0 +1,36 @@
+.zIndexNegative {
+  z-index: -1 !important;
+}
+
+.fnt-sty-nunito{
+  font-family: Nunito !important;
+}
+
+.loancontainerhiden {
+  display: none;
+}
+
+.loancontainer:hover + .loancontainerhiden,
+.loancontainerhiden:hover {
+    display: block;
+}
+.vert-move {
+  -webkit-animation: mover 1s infinite alternate;
+  animation: mover 0.7s infinite alternate;
+}
+@-webkit-keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
