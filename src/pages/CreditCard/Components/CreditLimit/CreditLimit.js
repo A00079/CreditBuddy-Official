@@ -82,7 +82,7 @@ export default function Creditlimit(props) {
                                     <div
                                         className="w-8 h-8 ring-2 ring-indigo-900 inline-flex items-center justify-center rounded-full bg-indigo-600 text-indigo-500 mb-4 flex-shrink-0"
                                     >
-                                        <p className="text-white font-bold text-xs">5</p>
+                                        <p className="text-white font-bold text-xs fnt-sty-nunito">5</p>
                                     </div>
                                     <div className="flex-grow pl-6">
 
@@ -95,7 +95,7 @@ export default function Creditlimit(props) {
                                     <div
                                         className="w-8 h-8 ring-2 ring-indigo-900 inline-flex items-center justify-center rounded-full bg-indigo-600 text-indigo-500 mb-4 flex-shrink-0"
                                     >
-                                        <p className="text-white font-bold text-xs">6</p>
+                                        <p className="text-white font-bold text-xs fnt-sty-nunito">6</p>
                                     </div>
                                     <div className="flex-grow pl-6">
 
@@ -108,7 +108,7 @@ export default function Creditlimit(props) {
                                     <div
                                         className="w-8 h-8 ring-2 ring-indigo-900 inline-flex items-center justify-center rounded-full bg-indigo-600 text-indigo-500 mb-4 flex-shrink-0"
                                     >
-                                        <p className="text-white font-bold text-xs">7</p>
+                                        <p className="text-white font-bold text-xs fnt-sty-nunito">7</p>
                                     </div>
                                     <div className="flex-grow pl-6">
 

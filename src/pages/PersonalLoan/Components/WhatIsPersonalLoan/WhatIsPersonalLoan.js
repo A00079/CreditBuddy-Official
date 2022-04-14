@@ -33,10 +33,10 @@ export default function Whatiscreditcard(props) {
                         </div>
                     </div>
                     <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-                        <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">What is Personal Loan
+                        <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 fnt-sty-nunito">What is Personal Loan
                         </h1>
-                        <p className="mb-3 leading-relaxed">A personal loan is an amount of money you can borrow to use for a variety of purposes. For instance, you may use a personal loan to consolidate debt, pay for home renovations, or plan a dream wedding.</p>
-                        <p className="mb-3 leading-relaxed">Personal loans can be offered by banks, credit unions, or online lenders. The money you borrow must be repaid over time, typically with interest. Some lenders may also charge fees for personal loans. g</p>
+                        <p className="mb-3 leading-relaxed fnt-sty-nunito">A personal loan is an amount of money you can borrow to use for a variety of purposes. For instance, you may use a personal loan to consolidate debt, pay for home renovations, or plan a dream wedding.</p>
+                        <p className="mb-3 leading-relaxed fnt-sty-nunito">Personal loans can be offered by banks, credit unions, or online lenders. The money you borrow must be repaid over time, typically with interest. Some lenders may also charge fees for personal loans. g</p>
                     </div>
                 </div>
             </section>

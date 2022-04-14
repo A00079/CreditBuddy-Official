@@ -81,13 +81,13 @@ export default function CreditProsCons(props) {
                                     <div
                                         className="w-4 h-4 ring-2 ring-indigo-900 inline-flex items-center justify-center rounded-full bg-indigo-600 text-indigo-500 mb-2 flex-shrink-0"
                                     >
-                                        <p className="text-white font-bold text-xs">4</p>
+                                        <p className="text-white font-bold text-xs fnt-sty-nunito">4</p>
                                     </div>
                                     <div className="flex-grow pl-6">
-                                        <h2 className="text-gray-800 text-md font-bold mb-1">
+                                        <h2 className="text-gray-800 text-md font-bold mb-1 fnt-sty-nunito">
                                             Offers and incentives
                                         </h2>
-                                        <small className="leading-relaxed  text-sm text-gray-600 font-semibold">
+                                        <small className="leading-relaxed  text-sm text-gray-600 font-semibold fnt-sty-nunito">
                                             Most credit cards come with a slew of offers and incentives to encourage you to use your card. These can range from cash back to rewards points accumulated each time you swipe your card, which can then be redeemed as air miles or used to pay off your outstanding card balance. Lenders may also give discounts on purchases made with a credit card, such as Aeroplan tickets, vacations, or significant purchases, allowing you to save money.
                                         </small>
                                     </div>
@@ -97,13 +97,13 @@ export default function CreditProsCons(props) {
                                     <div
                                         className="w-4 h-4 ring-2 ring-indigo-900 inline-flex items-center justify-center rounded-full bg-indigo-600 text-indigo-500 mb-2 flex-shrink-0"
                                     >
-                                        <p className="text-white font-bold text-xs">5</p>
+                                        <p className="text-white font-bold text-xs fnt-sty-nunito">5</p>
                                     </div>
                                     <div className="flex-grow pl-6">
-                                        <h2 className="text-gray-800 text-md font-bold mb-1">
+                                        <h2 className="text-gray-800 text-md font-bold mb-1 fnt-sty-nunito">
                                             Credit that is adaptable
                                         </h2>
-                                        <small className="leading-relaxed  text-sm text-gray-600 font-semibold">
+                                        <small className="leading-relaxed  text-sm text-gray-600 font-semibold fnt-sty-nunito">
                                             Credit cards have an interest-free period, which is a time period in which your outstanding credit is not charged interest. You can get free, short-term credit for 45-60 days if you pay off the entire balance owing before the due date on your credit card bill. As a result, you can profit from a credit advance while avoiding the fees associated with maintaining an outstanding amount on your credit card.
                                         </small>
                                     </div>
@@ -113,19 +113,19 @@ export default function CreditProsCons(props) {
                             </div>
                         </div>
                         <div className="content-limit">
-                            <p className='text-xl font-bold text-red-700 text-center mb-4'>DisAdvantages</p>
+                            <p className='text-xl font-bold text-red-700 text-center mb-4 fnt-sty-nunito'>DisAdvantages</p>
                             <div className="flex flex-col">
                                 <div className="p-2 md:w-full flex">
                                     <div
                                         className="w-4 h-4 ring-2 ring-indigo-900 inline-flex items-center justify-center rounded-full bg-indigo-600 text-indigo-500 mb-4 flex-shrink-0"
                                     >
-                                        <p className="text-white font-bold text-xs">1</p>
+                                        <p className="text-white font-bold text-xs fnt-sty-nunito">1</p>
                                     </div>
                                     <div className="flex-grow pl-6">
-                                        <h2 className="text-gray-800 text-md font-bold mb-1">
+                                        <h2 className="text-gray-800 text-md font-bold mb-1 fnt-sty-nunito">
                                             Undisclosed expenses
                                         </h2>
-                                        <small className="text-sm text-gray-600 font-bold">
+                                        <small className="text-sm text-gray-600 font-bold fnt-sty-nunito">
                                             Credit cards appear to be easy and clear at first glance, but they have a lot of hidden charges that can add up over time. Credit cards are subject to a variety of taxes and fees, including late payment costs, membership fees, renewal fees, and processing fees. Missing a card payment may result in a penalty, and repeated late payments may result in a reduction in your credit limit, which will harm your credit score and future credit prospects.
                                         </small>
                                     </div>
@@ -134,13 +134,13 @@ export default function CreditProsCons(props) {
                                     <div
                                         className="w-4 h-4 ring-2 ring-indigo-900 inline-flex items-center justify-center rounded-full bg-indigo-600 text-indigo-500 mb-2 flex-shrink-0"
                                     >
-                                        <p className="text-white font-bold text-xs">2</p>
+                                        <p className="text-white font-bold text-xs fnt-sty-nunito">2</p>
                                     </div>
                                     <div className="flex-grow pl-6">
-                                        <h2 className="text-gray-800 text-md font-bold mb-1">
+                                        <h2 className="text-gray-800 text-md font-bold mb-1 fnt-sty-nunito">
                                             Excessive interest rate
                                         </h2>
-                                        <small className="leading-relaxed  text-sm text-gray-600 font-semibold">
+                                        <small className="leading-relaxed  text-sm text-gray-600 font-semibold fnt-sty-nunito">
                                             If you do not pay your bills by the due date, the amount is carried forward and interest is levied. This interest is accumulated over time on purchases made after the interest-free period. Credit card interest rates are relatively high, with the average rate being 3% per month, which equates to 36% per year.
                                         </small>
                                     </div>
@@ -150,13 +150,13 @@ export default function CreditProsCons(props) {
                                     <div
                                         className="w-4 h-4 ring-2 ring-indigo-900 inline-flex items-center justify-center rounded-full bg-indigo-600 text-indigo-500 mb-2 flex-shrink-0"
                                     >
-                                        <p className="text-white font-bold text-xs">3</p>
+                                        <p className="text-white font-bold text-xs fnt-sty-nunito">3</p>
                                     </div>
                                     <div className="flex-grow pl-6">
-                                        <h2 className="text-gray-800 text-md font-bold mb-1">
+                                        <h2 className="text-gray-800 text-md font-bold mb-1 fnt-sty-nunito">
                                             The minimal due trap
                                         </h2>
-                                        <small className="leading-relaxed  text-sm text-gray-600 font-semibold">
+                                        <small className="leading-relaxed  text-sm text-gray-600 font-semibold fnt-sty-nunito">
                                             The most significant disadvantage of a credit card is the minimum due amount stated at the top of a bill statement. Many credit card holders are misled into believing that the minimum amount is the whole amount owed, while in fact it is the minimal amount that the corporation expects you to pay in order to continue obtaining credit facilities.
                                             As a result, clients assume their bill is modest and spend even more, accruing interest on their outstanding balance, which can quickly add up to a significant and unmanageable number
 
@@ -168,13 +168,13 @@ export default function CreditProsCons(props) {
                                     <div
                                         className="w-4 h-4 ring-2 ring-indigo-900 inline-flex items-center justify-center rounded-full bg-indigo-600 text-indigo-500 mb-2 flex-shrink-0"
                                     >
-                                        <p className="text-white font-bold text-xs">4</p>
+                                        <p className="text-white font-bold text-xs fnt-sty-nunito">4</p>
                                     </div>
                                     <div className="flex-grow pl-6">
-                                        <h2 className="text-gray-800 text-md font-bold mb-1">
+                                        <h2 className="text-gray-800 text-md font-bold mb-1 fnt-sty-nunito">
                                             Efficacy of overuse
                                         </h2>
-                                        <small className="leading-relaxed  text-sm text-gray-600 font-semibold">
+                                        <small className="leading-relaxed  text-sm text-gray-600 font-semibold fnt-sty-nunito">
                                             Because your bank balance remains constant with revolving credit, it may be tempting to charge all of your purchases to your card, leaving you uninformed of how much you owe. This could result in you overspending and owing more than you can pay back, thus starting the debt cycle and incurring hefty interest rates on your future payments.
 
                                         </small>
@@ -188,10 +188,10 @@ export default function CreditProsCons(props) {
                                         <p className="text-white font-bold text-xs">5</p>
                                     </div>
                                     <div className="flex-grow pl-6">
-                                        <h2 className="text-gray-800 text-md font-bold mb-1">
+                                        <h2 className="text-gray-800 text-md font-bold mb-1 fnt-sty-nunito">
                                             Credit card theft
                                         </h2>
-                                        <small className="leading-relaxed  text-sm text-gray-600 font-semibold">
+                                        <small className="leading-relaxed  text-sm text-gray-600 font-semibold fnt-sty-nunito">
                                             Though it is uncommon, there is a possibility that you will become a victim of credit card fraud. With technological advancements, it is feasible to clone a card and obtain access to personal information, allowing another individual or entity to make purchases on your card. Examine your statements carefully for any purchases that appear odd, and notify your bank promptly if you suspect card fraud. If the fraud is established, banks will normally waive the charges, so you will not have to pay for purchases made by the thief.
 
                                         </small>

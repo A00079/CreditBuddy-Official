@@ -6,8 +6,8 @@ export default function Fctorsaffecting(props) {
         <>
             <section className="text-gray-600 body-font">
                 <div className="container px-5 py-24 mx-auto">
-                    <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">FACTORS AFFECTING </h2>
-                    <h1 className="title-font sm:text-4xl text-3xl mb-10 font-bold text-indigo-600">FACTORS AFFECTING PERSONAL LOAN
+                    <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1 fnt-sty-nunito">FACTORS AFFECTING </h2>
+                    <h1 className="title-font sm:text-4xl text-3xl mb-10 font-bold text-indigo-600 fnt-sty-nunito">FACTORS AFFECTING PERSONAL LOAN
                     </h1>
                     <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6 sm:mx-8">
                         {/* <div className="p-4 md:w-full flex text-left text-indigo-600 font-bold">
@@ -20,8 +20,8 @@ export default function Fctorsaffecting(props) {
                                 </svg>
                             </div>
                             <div className="flex-grow pl-6">
-                                <h2 className="text-gray-700 text-lg title-font font-bold mb-2">Income</h2>
-                                <p className="leading-relaxed text-base">
+                                <h2 className="text-gray-700 text-lg title-font font-bold mb-2 fnt-sty-nunito">Income</h2>
+                                <p className="leading-relaxed text-base fnt-sty-nunito">
                                     Your income is the foremost deciding factor for your personal loan application. The greater your income, the higher your chances of being assigned lower personal loan interest rates. The bank needs to determine how easily you can repay the loan amount. To provide customers with a personal loan, the bank needs to trust them. This can only be possible when their income is above a certain minimum value.
 
                                 </p>
@@ -36,8 +36,8 @@ export default function Fctorsaffecting(props) {
                                 </svg>
                             </div>
                             <div className="flex-grow pl-6">
-                                <h2 className="text-gray-700 text-lg title-font font-bold mb-2">Credit history</h2>
-                                <p className="leading-relaxed text-base">Before the loan is approved, a lender will usually evaluate your CIBIL score to understand your credit history. The credit score is a 3-digit numeric rank provided by the Credit Rating Agency to individuals based on their credit repayment history. A good credit score is an indication that you can manage the loan well and repay in time.</p>
+                                <h2 className="text-gray-700 text-lg title-font font-bold mb-2 fnt-sty-nunito">Credit history</h2>
+                                <p className="leading-relaxed text-base fnt-sty-nunito">Before the loan is approved, a lender will usually evaluate your CIBIL score to understand your credit history. The credit score is a 3-digit numeric rank provided by the Credit Rating Agency to individuals based on their credit repayment history. A good credit score is an indication that you can manage the loan well and repay in time.</p>
                                 
                             </div>
                         </div>
@@ -49,8 +49,8 @@ export default function Fctorsaffecting(props) {
                                 </svg>
                             </div>
                             <div className="flex-grow pl-6">
-                                <h2 className="text-gray-700 text-lg title-font font-bold mb-2">Organisation’s reputation</h2>
-                                <p className="leading-relaxed text-base">Individuals working for a renowned organisation are more likely to receive a low interest on personal loans. Banks view employees working in renowned companies to have a fairly stable career and hence believe that they would make regular payments.</p>
+                                <h2 className="text-gray-700 text-lg title-font font-bold mb-2 fnt-sty-nunito">Organisation’s reputation</h2>
+                                <p className="leading-relaxed text-base fnt-sty-nunito">Individuals working for a renowned organisation are more likely to receive a low interest on personal loans. Banks view employees working in renowned companies to have a fairly stable career and hence believe that they would make regular payments.</p>
                             </div>
                         </div>
                     </div>

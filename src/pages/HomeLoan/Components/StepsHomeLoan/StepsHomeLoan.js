@@ -7,10 +7,10 @@ export default function Stepscreditcard() {
                 <div className="flex flex-wrap w-full">
                     <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
                         <h1
-                            className="sm:text-3xl text-2xl font-bold title-font text-indigo-900 lg:mb-0 mb-4"
+                            className="sm:text-3xl text-2xl font-bold title-font text-indigo-900 lg:mb-0 mb-4 fnt-sty-nunito"
                         >
                             Simple Steps Home Loan<br />
-                            <div className="text-sm text-gray-500 mt-1">
+                            <div className="text-sm text-gray-500 mt-1 fnt-sty-nunito">
                                 Follow the simple 6 Steps to complete your Home Loan Process.
                             </div>
                         </h1>
@@ -33,8 +33,8 @@ export default function Stepscreditcard() {
                                     </svg>
                                 </div>
                                 <div className="flex-grow pl-4">
-                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">STEP 1</h2>
-                                    <p className="leading-relaxed">Fill The Loan Application Form & Attach The Documents</p>
+                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider fnt-sty-nunito">STEP 1</h2>
+                                    <p className="leading-relaxed fnt-sty-nunito">Fill The Loan Application Form & Attach The Documents</p>
                                 </div>
                             </div>
                             <div className="flex relative pb-5">
@@ -47,8 +47,8 @@ export default function Stepscreditcard() {
                                     </svg>
                                 </div>
                                 <div className="flex-grow pl-4">
-                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">STEP 2</h2>
-                                    <p className="leading-relaxed">Pay The Processing Fee</p>
+                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider fnt-sty-nunito">STEP 2</h2>
+                                    <p className="leading-relaxed fnt-sty-nunito">Pay The Processing Fee</p>
                                 </div>
                             </div>
                             <div className="flex relative pb-5">
@@ -62,8 +62,8 @@ export default function Stepscreditcard() {
                                     </svg>
                                 </div>
                                 <div className="flex-grow pl-4">
-                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">STEP 3</h2>
-                                    <p className="leading-relaxed">Discussion With The Bank</p>
+                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider fnt-sty-nunito">STEP 3</h2>
+                                    <p className="leading-relaxed fnt-sty-nunito">Discussion With The Bank</p>
                                 </div>
                             </div>
                             <div className="flex relative pb-5">
@@ -77,8 +77,8 @@ export default function Stepscreditcard() {
                                     </svg>
                                 </div>
                                 <div className="flex-grow pl-4">
-                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">STEP 4</h2>
-                                    <p className="leading-relaxed">Valuation Of The Documents.</p>
+                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider fnt-sty-nunito">STEP 4</h2>
+                                    <p className="leading-relaxed fnt-sty-nunito">Valuation Of The Documents.</p>
                                 </div>
                             </div>
                             <div className="flex relative">
@@ -89,8 +89,8 @@ export default function Stepscreditcard() {
                                     </svg>
                                 </div>
                                 <div className="flex-grow pl-4">
-                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">STEP 5</h2>
-                                    <p className="leading-relaxed">The Sanction/Approval Process</p>
+                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider fnt-sty-nunito">STEP 5</h2>
+                                    <p className="leading-relaxed fnt-sty-nunito">The Sanction/Approval Process</p>
                                 </div>
                             </div>
                             <div className="flex relative pb-5">
@@ -104,8 +104,8 @@ export default function Stepscreditcard() {
                                     </svg>
                                 </div>
                                 <div className="flex-grow pl-4">
-                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">STEP 6</h2>
-                                    <p className="leading-relaxed">Processing The Offer Letter</p>
+                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider fnt-sty-nunito">STEP 6</h2>
+                                    <p className="leading-relaxed fnt-sty-nunito">Processing The Offer Letter</p>
                                 </div>
                             </div>
                             <div className="flex relative pb-5">
@@ -119,8 +119,8 @@ export default function Stepscreditcard() {
                                     </svg>
                                 </div>
                                 <div className="flex-grow pl-4">
-                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">STEP 7</h2>
-                                    <p className="leading-relaxed">Processing The Property Papers Followed By A Legal Check</p>
+                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider fnt-sty-nunito">STEP 7</h2>
+                                    <p className="leading-relaxed fnt-sty-nunito">Processing The Property Papers Followed By A Legal Check</p>
                                 </div>
                             </div>
                             <div className="flex relative pb-5">
@@ -134,8 +134,8 @@ export default function Stepscreditcard() {
                                     </svg>
                                 </div>
                                 <div className="flex-grow pl-4">
-                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">STEP 8</h2>
-                                    <p className="leading-relaxed">Processing A Technical Check & The Site Estimation</p>
+                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider fnt-sty-nunito">STEP 8</h2>
+                                    <p className="leading-relaxed fnt-sty-nunito">Processing A Technical Check & The Site Estimation</p>
                                 </div>
                             </div>
                             <div className="flex relative pb-5">
@@ -149,8 +149,8 @@ export default function Stepscreditcard() {
                                     </svg>
                                 </div>
                                 <div className="flex-grow pl-4">
-                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">STEP 9</h2>
-                                    <p className="leading-relaxed">The Final Loan Deal</p>
+                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider fnt-sty-nunito">STEP 9</h2>
+                                    <p className="leading-relaxed fnt-sty-nunito">The Final Loan Deal</p>
                                 </div>
                             </div>
                             <div className="flex relative pb-5">
@@ -164,20 +164,20 @@ export default function Stepscreditcard() {
                                     </svg>
                                 </div>
                                 <div className="flex-grow pl-4">
-                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">STEP 10</h2>
-                                    <p className="leading-relaxed">Signing The Agreement</p>
+                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider fnt-sty-nunito">STEP 10</h2>
+                                    <p className="leading-relaxed fnt-sty-nunito">Signing The Agreement</p>
                                 </div>
                             </div>
                         </div>
                         <div className="lg:w-1/2 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-5">
                             <div className="flex flex-col text-center mt-3 w-full mb-3">
                                 <h1
-                                    className="sm:text-3xl md:text-2xl text-left font-bold title-font mb-0 text-indigo-900"
+                                    className="sm:text-3xl md:text-2xl text-left font-bold title-font mb-0 text-indigo-900 fnt-sty-nunito"
                                 >
                                     Documents required
                                 </h1>
                                 <p
-                                    className="text-left text-gray-400 font-semibold leading-relaxed text-base"
+                                    className="text-left text-gray-400 font-semibold leading-relaxed text-base fnt-sty-nunito"
                                 >
                                     Below are the documents required for authentication.
                                 </p>
@@ -197,9 +197,8 @@ export default function Stepscreditcard() {
                                             <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                                             <path d="M22 4L12 14.01l-3-3"></path>
                                         </svg>
-                                        <span className="text-xs title-font text-white font-medium"
-                                        >Documents required</span
-                                        >
+                                        <span className="text-xs title-font text-white font-medium fnt-sty-nunito"
+                                        >Documents required</span>
                                     </div>
                                 </div>
                                 <div className="p-2 pl-0 w-full">
@@ -208,7 +207,7 @@ export default function Stepscreditcard() {
 
                                         </div> */}
                                         <div className="flex-grow">
-                                            <h2 className="text-gray-900 title-font text-sm font-medium">•	Loan application form.<br />
+                                            <h2 className="text-gray-900 title-font text-sm font-medium fnt-sty-nunito">•	Loan application form.<br />
                                                 •	3 photographs passport sized.<br />
                                                 •	Identify proof<br />
                                                 •	Residence proof<br />

@@ -292,20 +292,20 @@ export default function Creditcampaigns(props) {
                                         <div className="bg-white border-2 border-gray-300 rounded-md p-4 h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
                                             <img alt="team" className="flex-shrink-0 rounded-lg w-48 object-cover object-center sm:mb-0 mb-4" src={`/img/creditCards/${el.img}`} />
                                             <div className="flex-grow sm:pl-8">
-                                                <h2 className="w-full title-font font-bold text-lg  text-indigo-700">{el.card_name}</h2>
-                                                <h3 className="text-gray-500 mb-1 text-sm"><span className="text-gray-800 font-bold mb-3 text-sm">Card Type</span> : {el.card_type}</h3>
+                                                <h2 className="w-full title-font font-bold text-lg  text-indigo-700 fnt-sty-nunito">{el.card_name}</h2>
+                                                <h3 className="text-gray-500 mb-1 text-sm"><span className="text-gray-800 font-bold mb-3 text-sm fnt-sty-nunito">Card Type</span> : {el.card_type}</h3>
                                                 <p className="mb-1 flex flex-col items-center sm:items-start">
-                                                    <p className="text-gray-800 font-bold mb-1 text-sm">Fee</p>
-                                                    <p className="text-gray-500 text-sm">{el.fee[0]}</p>
-                                                    <p className="text-gray-500 text-sm">{el.fee[1]}</p>
+                                                    <p className="text-gray-800 font-bold mb-1 text-sm fnt-sty-nunito">Fee</p>
+                                                    <p className="text-gray-500 text-sm fnt-sty-nunito">{el.fee[0]}</p>
+                                                    <p className="text-gray-500 text-sm fnt-sty-nunito">{el.fee[1]}</p>
                                                 </p>
                                                 <h3 className="text-gray-500 mb-1 text-sm">
-                                                    <span className="text-gray-800 font-bold mb-3 text-sm">
+                                                    <span className="text-gray-800 font-bold mb-3 text-sm fnt-sty-nunito">
                                                         Eligibility
                                                     </span> : {el.eligibility}
                                                 </h3>
                                                 <span className="inline-flex">
-                                                    <button className="mt-2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-sm">Apply Now</button>
+                                                    <button className="mt-2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-sm fnt-sty-nunito">Apply Now</button>
                                                 </span>
                                             </div>
                                         </div>

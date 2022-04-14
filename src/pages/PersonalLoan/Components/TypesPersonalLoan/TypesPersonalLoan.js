@@ -6,8 +6,8 @@ export default function Typescreditcards(props) {
             <section className="text-gray-600 body-font">
                 <div className="container px-5 py-24 mx-auto">
                     <div className="flex flex-col text-center w-full mb-20">
-                    <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">TYPES OF PERSONAL LOAN</h2>
-                        <h1 className="title-font sm:text-4xl text-3xl mb-10 font-bold text-indigo-600">TYPES OF PERSONAL LOAN</h1>
+                    <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1 fnt-sty-nunito">TYPES OF PERSONAL LOAN</h2>
+                        <h1 className="title-font sm:text-4xl text-3xl mb-10 font-bold text-indigo-600 fnt-sty-nunito">TYPES OF PERSONAL LOAN</h1>
                         <p className="lg:w-4/3 mx-auto leading-relaxed text-base">Personal loan is one of the quickest and most convenient loans to avail in order to raise funds for a medical emergency, making an expensive purchase, getting married, consolidating your debts, renovating your home, etc. Easy application process, quick approval and minimum documentation are just a few of the many reasons that make it a preferred loan option. But many of us are unaware of the fact that there are many types of personal loans offered in India. Let’s have a look:</p>
                     </div>
                     <div className="flex flex-wrap -m-2">

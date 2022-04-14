@@ -7,10 +7,10 @@ export default function Stepscreditcard() {
                 <div className="flex flex-wrap w-full">
                     <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
                         <h1
-                            className="sm:text-3xl text-2xl font-bold title-font text-indigo-900 lg:mb-0 mb-4"
+                            className="sm:text-3xl text-2xl font-bold title-font text-indigo-900 lg:mb-0 mb-4 fnt-sty-nunito"
                         >
                             Simple Steps Personal Loan<br />
-                            <div className="text-sm text-gray-500 mt-1">
+                            <div className="text-sm text-gray-500 mt-1 fnt-sty-nunito">
                                 How To Apply
                                 Instant Personal Loan online.
                             </div>
@@ -34,7 +34,7 @@ export default function Stepscreditcard() {
                                     </svg>
                                 </div>
                                 <div className="flex-grow pl-4">
-                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">STEP 1</h2>
+                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider fnt-sty-nunito">STEP 1</h2>
                                     <p className="leading-relaxed font-bold text-gray-700">Personal Loan Application Process Online</p>
                                     <p>
                                         If the personal loan applicant has an existing relationship with the financial lender, he/she can apply for a personal loan via his/her net banking account and could possibly be eligible for a pre-approval. For other customers, they can apply for a personal loan online by following the steps mentioned below:
@@ -59,7 +59,7 @@ export default function Stepscreditcard() {
                                     </svg>
                                 </div>
                                 <div className="flex-grow pl-4">
-                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">STEP 2</h2>
+                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider fnt-sty-nunito">STEP 2</h2>
                                     <p className="leading-relaxed font-bold text-gray-700">Personal loan application offline</p>
                                     <p>
                                         Listed below is the process of applying for a personal loan at the branch of the financial lender:
@@ -77,12 +77,12 @@ export default function Stepscreditcard() {
                         <div className="lg:w-1/2 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-5">
                             <div className="flex flex-col text-center mt-3 w-full mb-3">
                                 <h1
-                                    className="sm:text-3xl md:text-2xl text-left font-bold title-font mb-0 text-indigo-900"
+                                    className="sm:text-3xl md:text-2xl text-left font-bold title-font mb-0 text-indigo-900 fnt-sty-nunito"
                                 >
                                     Documents required for personal loan application
                                 </h1>
                                 <p
-                                    className="text-left text-gray-400 font-semibold leading-relaxed text-base"
+                                    className="text-left text-gray-400 font-semibold leading-relaxed text-base fnt-sty-nunito"
                                 >
                                     Below are the documents required for authentication.
                                 </p>
@@ -102,7 +102,7 @@ export default function Stepscreditcard() {
                                             <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                                             <path d="M22 4L12 14.01l-3-3"></path>
                                         </svg>
-                                        <span className="text-xs title-font text-white font-medium"
+                                        <span className="text-xs title-font text-white font-medium fnt-sty-nunito"
                                         >Documents Required</span>
                                     </div>
                                 </div>
@@ -112,7 +112,7 @@ export default function Stepscreditcard() {
 
                                         </div> */}
                                         <div className="flex-grow">
-                                            <h2 className="text-gray-900 title-font text-sm font-medium">Identity Proof (Anyone): Aadhaar card/ Passport/ PAN CARD/ Voter ID card</h2>
+                                            <h2 className="text-gray-900 title-font text-sm font-medium fnt-sty-nunito">Identity Proof (Anyone): Aadhaar card/ Passport/ PAN CARD/ Voter ID card</h2>
                                         </div>
                                     </div>
                                 </div>
