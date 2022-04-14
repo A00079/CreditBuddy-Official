@@ -183,7 +183,7 @@ export default function DematAccountcampaigns(props) {
             <section className="text-gray-600 body-font">
                 <div className="container px-5 py-24 mx-auto">
                     <div className="flex flex-col text-center w-full mb-20">
-                        <h1 className="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest">WE FOUND THE BEST DEMAT ACCOUNT </h1>
+                        <h1 className="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest fnt-sty-nunito">WE FOUND THE BEST DEMAT ACCOUNT </h1>
                         <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
                     </div>
                     <div className='px-10 mb-10'>
@@ -193,7 +193,7 @@ export default function DematAccountcampaigns(props) {
                                     <p className='text-sm font-bold'>Filter By -</p>
                                     <div className='w-40'>
                                         <FormControl className='w-40'>
-                                            <InputLabel id="demo-multiple-checkbox-label">Demat</InputLabel>
+                                            <InputLabel id="demo-multiple-checkbox-label fnt-sty-nunito">Demat</InputLabel>
                                             <Select
                                                 labelId="demo-multiple-checkbox-label"
                                                 id="demo-multiple-checkbox"

@@ -8,7 +8,7 @@ export default function Eligibility(props) {
                 <div className="container px-5 py-24 mx-auto">
                     <div className="flex flex-col text-center w-full mb-20">
                         <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">Eligibility</h2>
-                        <h1 className="title-font sm:text-4xl text-3xl mb-4 font-bold text-indigo-600">Eligibility Criteria</h1>
+                        <h1 className="title-font sm:text-4xl text-3xl mb-4 font-bold text-indigo-600 fnt-sty-nunito">Eligibility Criteria</h1>
                         <p className="lg:w-full mx-auto px-20 leading-relaxed text-base">Potential borrowers must meet certain home loan eligibility criteria before applying for a home loan to experience hassle-free loan processing. The criteria laid down include parameters related to age, income, employment status and stability, and property value.</p>
                         <p className="lg:w-full mx-auto px-20 leading-relaxed text-base mt-3">Both self-employed and salaried individuals can avail of credits against separate sets of home loan eligibility requirements. Bajaj Housing Finance keeps home loan eligibility criteria simple to improve the loan’s accessibility to borrowers. Check home loan eligibility for both salaried and self-employed individuals below and apply as per your profile.</p>
                     </div>

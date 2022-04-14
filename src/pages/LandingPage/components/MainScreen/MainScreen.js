@@ -27,7 +27,7 @@ export default function MainScreen() {
                                             <img src='./img/Credit-Card/credit-card.png' className='mx-auto h-16 w-16 object-fit object-center' />
                                         </div>
                                         <div className='content-label'>
-                                            <p className='text-gray-600 font-bold text-sm text-center'>Credit Card</p>
+                                            <p className='text-gray-600 font-bold text-sm text-center fnt-sty-nunito'>Credit Card</p>
                                         </div>
                                     </div>
                                 </Link>
@@ -39,7 +39,7 @@ export default function MainScreen() {
                                             <img src='./img/Personal-Loan/personalloan.png' className='mx-auto h-16 w-16 object-fit object-center' />
                                         </div>
                                         <div className='content-label'>
-                                            <p className='text-gray-600 font-bold text-sm text-center'>Personal Loan</p>
+                                            <p className='text-gray-600 font-bold text-sm text-center fnt-sty-nunito'>Personal Loan</p>
                                         </div>
                                     </div>
                                 </Link>
@@ -51,7 +51,7 @@ export default function MainScreen() {
                                             <img src='./img/Home-Loan/home-loan.png' className='mx-auto h-16 w-16 object-fit object-center' />
                                         </div>
                                         <div className='content-label'>
-                                            <p className='text-gray-600 font-bold text-sm text-center'>Home Loan</p>
+                                            <p className='text-gray-600 font-bold text-sm text-center fnt-sty-nunito'>Home Loan</p>
                                         </div>
                                     </div>
                                 </Link>
@@ -63,7 +63,7 @@ export default function MainScreen() {
                                             <img src='./img/Demat-Account/demat-acct.png' className='mx-auto h-16 w-16 object-fit object-center' />
                                         </div>
                                         <div className='content-label'>
-                                            <p className='text-gray-600 font-bold text-sm text-center'>Demat Account</p>
+                                            <p className='text-gray-600 font-bold text-sm text-center fnt-sty-nunito'>Demat Account</p>
                                         </div>
                                     </div>
                                 </Link>
@@ -75,7 +75,7 @@ export default function MainScreen() {
                                             <img src='./img/Saving-Account/savings.png' className='mx-auto h-16 w-16 object-fit object-center' />
                                         </div>
                                         <div className='content-label'>
-                                            <p className='text-gray-600 font-bold text-sm text-center'>Saving Account</p>
+                                            <p className='text-gray-600 font-bold text-sm text-center fnt-sty-nunito'>Saving Account</p>
                                         </div>
                                     </div>
                                 </Link>

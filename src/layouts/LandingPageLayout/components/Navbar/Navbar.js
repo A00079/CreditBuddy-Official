@@ -56,7 +56,7 @@ const Navbar = () => {
                 >
                   <div className="flex justify-start lg:w-0 lg:flex-1">
                     <Link to='/'>
-                      <span className="text-white text-xl pl-20 sm:px-16 font-bold">Credit Buddy</span>
+                      <span className="text-white text-xl pl-20 sm:px-16 font-bold fnt-sty-nunito">Credit Buddy</span>
                     </Link>
                   </div>
                   {/* <div className="-mr-2 -my-2 pt-1 md:hidden">
@@ -86,7 +86,7 @@ const Navbar = () => {
                     <NavItems />
                     <Link to='contact-us'>
                       <div
-                        className="text-base md:text-sm mt-1 font-medium text-white hover:text-gray-300"
+                        className="text-base md:text-sm mt-1 font-medium text-white hover:text-gray-300 fnt-sty-nunito"
                       >
                         Contact
                       </div>

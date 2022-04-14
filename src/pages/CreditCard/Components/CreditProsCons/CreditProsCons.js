@@ -6,22 +6,22 @@ export default function CreditProsCons(props) {
             <div className="container px-5 py-20 mx-auto">
                 <div className="flex flex-col text-center w-full mb-6">
                     <h2
-                        className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1"
+                        className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1 fnt-sty-nunito"
                     >
                         Credit Card Pros / Cons
                     </h2>
                     <h1
-                        className="text-2xl md:text-3xl font-bold title-font mb-4 text-indigo-900"
+                        className="text-2xl md:text-3xl font-bold title-font mb-4 text-indigo-900 fnt-sty-nunito"
                     >
                         ADVANTAGES & DISADVANTAGES OF CREDIT CARD
                     </h1>
                     <p
-                        className="w-full mx-auto md:px-28 mb-3 lg:px-28 xl:px-28 px-4 leading-relaxed text-sm text-gray-600 font-semibold"
+                        className="w-full mx-auto md:px-28 mb-3 lg:px-28 xl:px-28 px-4 leading-relaxed text-sm text-gray-600 font-semibold fnt-sty-nunito"
                     >
                         With their simplicity of use and handy pay-back possibilities, credit cards have become an integral part of our lives. A credit card's discounts, incentives, and bargains are unrivalled by any other financial product and promise a jackpot for the intelligent user. Credit cards, on the other hand, can become debt traps if not handled wisely or if you spend more than you can repay when the bill arrives.
                     </p>
                     <p
-                        className="w-full mx-auto md:px-28 lg:px-28 xl:px-28 px-4 leading-relaxed text-sm text-gray-600 font-semibold"
+                        className="w-full mx-auto md:px-28 lg:px-28 xl:px-28 px-4 leading-relaxed text-sm text-gray-600 font-semibold fnt-sty-nunito"
                     >
                         If you're new to the world of credit, here's a rundown of the benefits and drawbacks of your small plastic card.
                     </p>
@@ -29,7 +29,7 @@ export default function CreditProsCons(props) {
                 <div className="Limit-section">
                     <div className="w-full md:flex flex-row lg:flex flex-row xl:flex flex-row">
                         <div className="content-limit">
-                            <p className='text-xl font-bold text-green-700 text-center mb-4'>Advantages</p>
+                            <p className='text-xl font-bold text-green-700 text-center mb-4 fnt-sty-nunito'>Advantages</p>
                             <div className="flex flex-col">
                                 <div className="p-2 md:w-full flex border-r-2 border-gray-400">
                                     <div
@@ -38,10 +38,10 @@ export default function CreditProsCons(props) {
                                         <p className="text-white font-bold text-xs">1</p>
                                     </div>
                                     <div className="flex-grow pl-6">
-                                        <h2 className="text-gray-800 text-md font-bold mb-1">
+                                        <h2 className="text-gray-800 text-md font-bold mb-1 fnt-sty-nunito">
                                             Easy credit access
                                         </h2>
-                                        <small className="text-sm text-gray-600 font-bold">
+                                        <small className="text-sm text-gray-600 font-bold fnt-sty-nunito">
                                             The most significant advantage of a credit card is its ease of credit access. Credit cards operate on a deferred payment system, which means you can use your card now and pay for your purchases later. Every time you swipe, the money does not leave your account, thus your bank balance is not depleted.
                                         </small>
                                     </div>
@@ -53,10 +53,10 @@ export default function CreditProsCons(props) {
                                         <p className="text-white font-bold text-xs">2</p>
                                     </div>
                                     <div className="flex-grow pl-6">
-                                        <h2 className="text-gray-800 text-md font-bold mb-1">
+                                        <h2 className="text-gray-800 text-md font-bold mb-1 fnt-sty-nunito">
                                             Establishing a credit line
                                         </h2>
-                                        <small className="leading-relaxed  text-sm text-gray-600 font-semibold">
+                                        <small className="leading-relaxed  text-sm text-gray-600 font-semibold fnt-sty-nunito">
                                             Credit cards allow you to build up a line of credit. This is critical since it enables banks to observe an active credit history based on your card repayments and usage. Credit card usage is frequently used by banks and financial institutions to assess a potential loan applicant's creditworthiness, making your credit card vital for future loan or rental applications.
                                         </small>
                                     </div>
@@ -68,10 +68,10 @@ export default function CreditProsCons(props) {
                                         <p className="text-white font-bold text-xs">3</p>
                                     </div>
                                     <div className="flex-grow pl-6">
-                                        <h2 className="text-gray-800 text-md font-bold mb-1">
+                                        <h2 className="text-gray-800 text-md font-bold mb-1 fnt-sty-nunito">
                                             The EMI facility
                                         </h2>
-                                        <small className="leading-relaxed  text-sm text-gray-600 font-semibold">
+                                        <small className="leading-relaxed  text-sm text-gray-600 font-semibold fnt-sty-nunito">
                                             If you want to make a major purchase but don't want to use your funds, you can put it on your credit card as a way to defer payment. In addition, you can choose to pay off your purchase in equal monthly instalments, avoiding paying a big sum and exhausting your bank account. Using EMI to pay for a purchase, such as a television or an expensive refrigerator, is less expensive than taking out a personal loan.
                                         </small>
                                     </div>

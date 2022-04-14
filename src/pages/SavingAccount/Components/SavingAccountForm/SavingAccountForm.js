@@ -71,8 +71,8 @@ const SavingAccountform = (props) => {
                         <p className="mb-3 leading-relaxed">Savings plans have some restrictions on how frequently you can withdraw money, but they typically offer excellent flexibility that is ideal htmlFor establishing an emergency fund, saving htmlFor a short-term goal such as buying a car or going on vacation, or simply sweeping the excess cash in your bank account so it can earn more interest elsewhere.</p>
                     </div>
                     <div className="lg:w-1/2 md:w-1/2 bg-gray-100 rounded-lg px-6 py-6 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
-                        <h2 className="text-gray-500 text-lg font-bold title-font mb-1">The Card That Suits You!</h2>
-                        <h2 className="text-gray-500 text-sm font-bold title-font mb-5">Best Credit Card In India</h2>
+                        <h2 className="text-gray-500 text-lg font-bold title-font mb-1">The Savings Account That Suits You!</h2>
+                        <h2 className="text-gray-500 text-sm font-bold title-font mb-5">Best Savings Account In India</h2>
                         <div className='w-full flex flex-col sm:flex-row justify-between sm:space-x-8'>
                             <div className="relative mb-2 w-full">
                                 <label htmlFor="firstname" className="leading-7 text-sm font-semibold text-gray-600">First Name</label>
@@ -126,7 +126,7 @@ const SavingAccountform = (props) => {
                         <div className='w-42'>
                             <button onClick={() => saveData()} className="text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded text-lg">Get Started</button>
                         </div>
-                        <p className="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p>
+                        <p className="text-xs text-gray-500 mt-3">Please make sure you enter correct details.Your details will be verified by us.</p>
                     </div>
                 </div>
             </section>

@@ -220,8 +220,8 @@ export default function Creditcampaigns(props) {
             <section className="text-gray-600 body-font">
                 <div className="container px-5 py-24 mx-auto">
                     <div className="flex flex-col text-center w-full mb-10">
-                        <h1 className="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest">WE FOUND THE BEST CREDIT CARDS </h1>
-                        <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
+                        <h1 className="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest fnt-sty-nunito">WE FOUND THE BEST CREDIT CARDS </h1>
+                        <p className="lg:w-2/3 mx-auto leading-relaxed text-base fnt-sty-nunito">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
                     </div>
                     <div className='px-10 mb-10'>
                         <div className='bg-white px-5 shadow-md rounded-md py-5 w-full border-2 border-gray-200'>

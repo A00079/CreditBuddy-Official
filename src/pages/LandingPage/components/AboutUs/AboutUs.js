@@ -31,13 +31,13 @@ const AboutUs = () => {
                         />
                     </div>
                     <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-                        <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">About Our Company</h2>
-                        <h1 className="title-font sm:text-4xl text-3xl mb-4 font-bold text-indigo-600">About Us</h1>
-                        <p className="mb-3 leading-relaxed">Our goal is to become a one-stop solution provider for any issues that arise when you query about any present or upcoming financial product. At CreditKaro, we have a diverse inventory of banking and financial products, as well as exclusive offers.
+                        <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1  fnt-sty-nunito">About Our Company</h2>
+                        <h1 className="title-font sm:text-4xl text-3xl mb-4 font-bold text-indigo-600 fnt-sty-nunito  fnt-sty-nunito">About Us</h1>
+                        <p className="mb-3 leading-relaxed  fnt-sty-nunito">Our goal is to become a one-stop solution provider for any issues that arise when you query about any present or upcoming financial product. At CreditKaro, we have a diverse inventory of banking and financial products, as well as exclusive offers.
 
 
                         </p>
-                        <p className="text-sm mt-2 text-gray-500 mb-8 w-full">On our website, we provide a wide range of products and allow you to compare them before making a purchase. What else is there? You can also check your credit score for free right here!</p>
+                        <p className="text-sm mt-2 text-gray-500 mb-8 w-full  fnt-sty-nunito">On our website, we provide a wide range of products and allow you to compare them before making a purchase. What else is there? You can also check your credit score for free right here!</p>
                     </div>
                 </div>
             </section>

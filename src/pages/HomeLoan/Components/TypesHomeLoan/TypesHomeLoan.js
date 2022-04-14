@@ -7,7 +7,7 @@ export default function Typescreditcards(props) {
                 <div className="container px-5 py-24 mx-auto">
                     <div className="flex flex-col text-center w-full mb-20">
                         <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">TYPES OF HOME LOAN</h2>
-                        <h1 className="title-font sm:text-4xl text-3xl mb-4 font-bold text-indigo-600">Types of Home Loans in India</h1>
+                        <h1 className="title-font sm:text-4xl text-3xl mb-4 font-bold text-indigo-600 fnt-sty-nunito">Types of Home Loans in India</h1>
 
                         <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Buying a house is one of the biggest dreams come true for most people and an extravagant affair altogether. Imparting life to such a dream requires a lot of effort from the buyers’ end and the best one can do to accommodate the home in their budget is through a home loan</p>
                     </div>

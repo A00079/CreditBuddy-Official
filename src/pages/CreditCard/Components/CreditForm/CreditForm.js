@@ -55,7 +55,7 @@ const Creditform = (props) => {
             <section className="text-gray-600 body-font">
                 <div className="container px-5 py-8 mx-auto flex flex-wrap items-center">
                     <div className="lg:w-1/2 md:w-1/2 md:pr-16 lg:pr-10 pr-0">
-                        <h1 className="title-font sm:text-4xl text-3xl mb-4 font-bold text-indigo-600">Credit Card
+                        <h1 className="title-font sm:text-4xl text-3xl mb-4 font-bold text-indigo-600 fnt-sty-nunito">Credit Card
                         </h1>
                         <div className=''>
                             <Lottie
@@ -64,12 +64,12 @@ const Creditform = (props) => {
                                 width={250}
                             />
                         </div>
-                        <p className="mb-3 leading-relaxed font-medium">A credit card is a small rectangular piece of plastic or metal provided by a bank or financial services business that allows cardholders to borrow funds to pay htmlFor products and services from retailers who accept credit cards.</p>
-                        <p className="leading-relaxed font-medium">Credit cards require cardholders to repay the borrowed funds, plus any related interest, as well as any extra agreed charges, in full by the billing date or over time.</p>
+                        <p className="mb-3 leading-relaxed font-medium fnt-sty-nunito">A credit card is a small rectangular piece of plastic or metal provided by a bank or financial services business that allows cardholders to borrow funds to pay htmlFor products and services from retailers who accept credit cards.</p>
+                        <p className="leading-relaxed font-medium fnt-sty-nunito">Credit cards require cardholders to repay the borrowed funds, plus any related interest, as well as any extra agreed charges, in full by the billing date or over time.</p>
                     </div>
                     <div className="lg:w-1/2 md:w-1/2 bg-gray-100 rounded-lg px-6 py-6 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
-                        <h2 className="text-gray-500 text-lg font-bold title-font mb-1">The Card That Suits You!</h2>
-                        <h2 className="text-gray-500 text-sm font-bold title-font mb-5">Best Credit Card In India</h2>
+                        <h2 className="text-gray-500 text-lg font-bold title-font mb-1 fnt-sty-nunito">The Card That Suits You!</h2>
+                        <h2 className="text-gray-500 text-sm font-bold title-font mb-5 fnt-sty-nunito">Best Credit Card In India</h2>
                         <div className='w-full flex flex-col sm:flex-row justify-between sm:space-x-8'>
                             <div className="relative mb-2 w-full">
                                 <label htmlFor="firstname" className="leading-7 text-sm font-semibold text-gray-600">First Name</label>
@@ -123,7 +123,7 @@ const Creditform = (props) => {
                         <div className='w-42'>
                             <button onClick={(e) => saveData(e)} className="text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded text-lg">Get Started</button>
                         </div>
-                        <p className="text-xs text-gray-500 mt-3">Please make sure you enter correct details.Your details will be verified by us.</p>
+                        <p className="text-xs text-gray-500 mt-3 fnt-sty-nunito">Please make sure you enter correct details.Your details will be verified by us.</p>
                     </div>
                 </div>
             </section>

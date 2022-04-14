@@ -34,13 +34,13 @@ const Footer = (props) => {
                   <Link to='/credit-card'>
 
                     <li className="mb-2">
-                      <p className="text-gray-500 hover:text-gray-300 ">Credit Card</p>
+                      <p className="text-gray-500 hover:text-gray-300  fnt-sty-nunito">Credit Card</p>
                     </li>
                   </Link>
                   <Link to='/personal-loan'>
 
                     <li>
-                      <p className="text-gray-500 hover:text-gray-300">Personal Loan</p>
+                      <p className="text-gray-500 hover:text-gray-300 fnt-sty-nunito">Personal Loan</p>
                     </li>
                   </Link>
                   {/* <li>
@@ -61,13 +61,13 @@ const Footer = (props) => {
                   <Link to='/home-loan'>
 
                     <li>
-                      <p className="text-gray-500 hover:text-gray-300">Home Loan</p>
+                      <p className="text-gray-500 hover:text-gray-300 fnt-sty-nunito">Home Loan</p>
                     </li>
                   </Link>
                   <Link to='/demat-account'>
 
                     <li>
-                      <p className="text-gray-500 hover:text-gray-300">Demat Account</p>
+                      <p className="text-gray-500 hover:text-gray-300 fnt-sty-nunito">Demat Account</p>
                     </li>
                   </Link>
                   
@@ -83,7 +83,7 @@ const Footer = (props) => {
                   <Link to='/saving-account'>
 
                     <li>
-                      <p className="text-gray-500 hover:text-gray-300">Saving Account</p>
+                      <p className="text-gray-500 hover:text-gray-300 fnt-sty-nunito">Saving Account</p>
                     </li>
                   </Link>
                  
@@ -96,11 +96,11 @@ const Footer = (props) => {
             <div className="flex justify-around">
               <div className="flex flex-row justify-center items-center">
                 {/* <p className="text-gray-400 pl-5">Investors</p> */}
-                <p className="text-gray-400 pl-5">Privacy Policy</p>
-                <p className="text-gray-400 pl-5">Terms of Use</p>
-                <p className="text-gray-400 pl-5">Disclaimer</p>
-                <p className="text-gray-400 pl-5">Intellectual Policy</p>
-                <p className="text-gray-400 pl-5">Sitemap</p>
+                <p className="text-gray-400 pl-5 fnt-sty-nunito">Privacy Policy</p>
+                <p className="text-gray-400 pl-5 fnt-sty-nunito">Terms of Use</p>
+                <p className="text-gray-400 pl-5 fnt-sty-nunito">Disclaimer</p>
+                <p className="text-gray-400 pl-5 fnt-sty-nunito">Intellectual Policy</p>
+                <p className="text-gray-400 pl-5 fnt-sty-nunito">Sitemap</p>
               </div>
               <div className="flex flex-row justify-end">
                 <p className="text-gray-400 pl-5">
@@ -141,22 +141,22 @@ const Footer = (props) => {
               className="flex-grow flex flex-wrap bg-gray-700 mt-6 p-2 md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center"
             >
               <div className="lg:w-1/4 md:w-1/2 w-1/2 px-4 py-1">
-                <p className="text-gray-400 pl-5">Investors</p>
+                <p className="text-gray-400 pl-5 fnt-sty-nunito">Investors</p>
               </div>
               <div className="lg:w-1/4 md:w-1/2 w-1/2 px-4 py-1">
-                <p className="text-gray-400 pl-5">Privacy Policy</p>
+                <p className="text-gray-400 pl-5 fnt-sty-nunito">Privacy Policy</p>
               </div>
               <div className="lg:w-1/4 md:w-1/2 w-1/2 px-4 py-1">
-                <p className="text-gray-400 pl-5">Terms of Use</p>
+                <p className="text-gray-400 pl-5 fnt-sty-nunito">Terms of Use</p>
               </div>
               <div className="lg:w-1/4 md:w-1/2 w-1/2 px-4 py-1">
-                <p className="text-gray-400 pl-5">Disclaimer</p>
+                <p className="text-gray-400 pl-5 fnt-sty-nunito">Disclaimer</p>
               </div>
               <div className="lg:w-1/4 md:w-1/2 w-1/2 px-4 py-1">
-                <p className="text-gray-400 pl-5">Intellectual Policy</p>
+                <p className="text-gray-400 pl-5 fnt-sty-nunito">Intellectual Policy</p>
               </div>
               <div className="lg:w-1/4 md:w-1/2 w-1/2 px-4 py-1">
-                <p className="text-gray-400 pl-5">Sitemap</p>
+                <p className="text-gray-400 pl-5 fnt-sty-nunito">Sitemap</p>
               </div>
               <div className="flex flex-row mx-auto mt-5 mb-3">
                 <p className="text-gray-400 pl-5">
@@ -198,7 +198,7 @@ const Footer = (props) => {
             className="container mx-auto py-2 px-10 md:px-24 lg:px-24 xl:px-10 flex flex-wrap flex-col sm:flex-row"
           >
             <small
-              className="text-gray-400 text-left md:text-left lg:text-left xl:text-left sm:text-left"
+              className="text-gray-400 text-left md:text-left lg:text-left xl:text-left sm:text-left fnt-sty-nunito"
             >
               Office No.348/349 | 2nd floor | Orchard Corporate Park | ORM Wing B | Royal Palms Estate | Near Film City | Goregaon East | Mumbai | Maharashtra - 400065<br />
               All Rights Reserved. *No. 1 in terms of loan disbursal as per industry
@@ -210,7 +210,7 @@ const Footer = (props) => {
               <a className="text-gray-500">
                 <img src="/img/LandingScreen/india.png" className="w-12 h-12" />
               </a>
-              <small className="ml-3 text-gray-200 items-center mt-3">
+              <small className="ml-3 text-gray-200 items-center mt-3 fnt-sty-nunito">
                 Made in India
               </small>
             </span>
