@@ -3,11 +3,13 @@ import Lottie from 'react-lottie';
 import animationData from '../../../../lotties/credit-card.json';
 import { withRouter } from "react-router";
 import axios from 'axios';
+import firebase from '../../../../utils/firebase.js';
 
 const Creditform = (props) => {
     const [input, setInput] = useState({});
     const [isOpenDrop, setIsOpenDrop] = useState(false);
     const [selectedOption, setSelectedOption] = useState('Gender');
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -30,24 +32,42 @@ const Creditform = (props) => {
     };
 
     const saveData = () => {
-        let data =
-        {
-            "firstName": input.firstname,
-            "contact": input.contact,
-            "lastName": input.lastname,
-            "email": input.email,
-            "birthDate": input.birthdate,
-            "averageAnnualIncome": input.averageannualincome,
-            "gender": input.gender
+        setIsLoading(true);
+        if (!!input.firstname && !!input.contact && !!input.lastname && !!input.email && !!input.birthdate && !!input.averageannualincome && !!input.gender) {
+            let data =
+            {
+                "firstName": input.firstname,
+                "contact": input.contact,
+                "lastName": input.lastname,
+                "email": input.email,
+                "birthDate": input.birthdate,
+                "averageAnnualIncome": input.averageannualincome,
+                "gender": input.gender
+            }
+            console.log('Data ===>', data);
+            firebase.child('user_form_credit_card').push(
+                data,
+                err => {
+                    if (err) {
+                        setIsLoading(false);
+                        alert('Something Went Wrong...');
+                    } else {
+                        document.getElementById('firstname').value = "";
+                        document.getElementById('lastname').value = "";
+                        document.getElementById('contact').value = "";
+                        document.getElementById('email').value = "";
+                        document.getElementById('birthdate').value = "";
+                        document.getElementById('averageannualincome').value = "";
+                        setSelectedOption('Gender');
+                        alert('Details saved successfully');
+                        setIsLoading(false);
+                    }
+                })
+        } else {
+            setIsLoading(false);
+            alert('All fields are mandatory.');
         }
-        console.log('Data ===>', data);
-        // axios.post('https://credit.candidleads.com/api/v1/details/adddetail?type=creditcard', data)
-        //     .then(function (response) {
-        //         console.log(response);
-        //     })
-        //     .catch(function (error) {
-        //         console.log(error);
-        //     });
+
     }
 
     return (
@@ -81,7 +101,7 @@ const Creditform = (props) => {
                             </div>
                         </div>
                         <div className='w-full flex flex-col sm:flex-row justify-between sm:space-x-8'>
-                            <div className="relative mb-2 w-full"> 
+                            <div className="relative mb-2 w-full">
                                 <label htmlFor="contact" className="leading-7 font-semibold text-sm text-gray-600 fnt-sty-nunito">Contact</label>
                                 <input onChange={handleInputChange} type="number" id="contact" name="contact" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                             </div>
@@ -121,7 +141,14 @@ const Creditform = (props) => {
                             </div>
                         </div>
                         <div className='w-42'>
-                            <button onClick={(e) => saveData(e)} className="text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded text-lg fnt-sty-nunito">Get Started</button>
+                            <button onClick={(e) => saveData(e)} className="text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded text-lg fnt-sty-nunito">
+                                {
+                                    isLoading ?
+                                        <svg className="w-5 h-5 text-white animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                                        :
+                                        <div>Get Started</div>
+                                }
+                            </button>
                         </div>
                         <p className="text-xs text-gray-500 mt-3 fnt-sty-nunito">Please make sure you enter correct details.Your details will be verified by us.</p>
                     </div>

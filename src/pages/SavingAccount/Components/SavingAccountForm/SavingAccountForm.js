@@ -3,11 +3,13 @@ import Lottie from 'react-lottie';
 import animationData from '../../../../lotties/saving-money.json';
 import { withRouter } from "react-router";
 import axios from 'axios';
+import firebase from '../../../../utils/firebase';
 
 const SavingAccountform = (props) => {
     const [input, setInput] = useState({});
     const [isOpenDrop, setIsOpenDrop] = useState(false);
     const [selectedOption, setSelectedOption] = useState('Gender');
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -35,23 +37,41 @@ const SavingAccountform = (props) => {
 
 
     const saveData = () => {
-        let data =
-        {
-            "firstName": input.firstname,
-            "contact": input.contact,
-            "lastName": input.lastname,
-            "email": input.email,
-            "birthDate": input.birthdate,
-            "averageAnnualIncome": input.averageannualincome,
-            "gender": input.gender
+        setIsLoading(true);
+        if (!!input.firstname && !!input.contact && !!input.lastname && !!input.email && !!input.birthdate && !!input.averageannualincome && !!input.gender) {
+            let data =
+            {
+                "firstName": input.firstname,
+                "contact": input.contact,
+                "lastName": input.lastname,
+                "email": input.email,
+                "birthDate": input.birthdate,
+                "averageAnnualIncome": input.averageannualincome,
+                "gender": input.gender
+            }
+            console.log('Data ===>', data);
+            firebase.child('user_form_saving_account').push(
+                data,
+                err => {
+                    if (err) {
+                        setIsLoading(false);
+                        alert('Something Went Wrong...');
+                    } else {
+                        document.getElementById('firstname').value = "";
+                        document.getElementById('lastname').value = "";
+                        document.getElementById('contact').value = "";
+                        document.getElementById('email').value = "";
+                        document.getElementById('birthdate').value = "";
+                        document.getElementById('averageannualincome').value = "";
+                        setSelectedOption('Gender');
+                        alert('Details saved successfully');
+                        setIsLoading(false);
+                    }
+                })
+        } else {
+            setIsLoading(false);
+            alert('All fields are mandatory.');
         }
-        axios.post('https://credit.candidleads.com/api/v1/details/adddetail?type=savingaccount', data)
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
     }
     return (
         <React.Fragment>
@@ -103,7 +123,7 @@ const SavingAccountform = (props) => {
                                 <input onChange={handleInputChange} type="number" id="averageannualincome" name="averageannualincome" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                             </div>
                         </div>
-                        <div className='w-full flex flex-col sm:flex-row justify-between sm:space-x-8 mb-4'>
+                        <div className='sm:w-1/2 w-full flex flex-col sm:flex-row justify-between sm:space-x-8 mb-4 sm:pr-4'>
                             <div className="relative w-full inline-block text-left">
                                 <div>
                                     <button onClick={() => toggleOption()} type="button" className="inline-flex justify-between w-full rounded-md border border-gray-300 shadow-sm px-3 py-3 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" id="menu-button" aria-expanded="true" aria-haspopup="true">
@@ -116,7 +136,7 @@ const SavingAccountform = (props) => {
                                 <div className={isOpenDrop ? 'block' : 'hidden'}>
                                     <div className="origin-top-right absolute right-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex="-1">
                                         <div className="py-1" role="none">
-                                           <p onClick={() => toggleOption('Male')} className="text-gray-700 hover:bg-gray-100 block px-4 py-2 text-sm fnt-sty-nunito" role="menuitem" tabIndex="-1" id="menu-item-0">Male</p>
+                                            <p onClick={() => toggleOption('Male')} className="text-gray-700 hover:bg-gray-100 block px-4 py-2 text-sm fnt-sty-nunito" role="menuitem" tabIndex="-1" id="menu-item-0">Male</p>
                                             <p onClick={() => toggleOption('Female')} className="text-gray-700 hover:bg-gray-100 block px-4 py-2 text-sm fnt-sty-nunito" role="menuitem" tabIndex="-1" id="menu-item-1">Female</p>
                                         </div>
                                     </div>
@@ -124,7 +144,14 @@ const SavingAccountform = (props) => {
                             </div>
                         </div>
                         <div className='w-42'>
-                            <button onClick={() => saveData()} className="text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded text-lg fnt-sty-nunito">Get Started</button>
+                            <button onClick={() => saveData()} className="text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded text-lg fnt-sty-nunito">
+                                {
+                                    isLoading ?
+                                        <svg className="w-5 h-5 text-white animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                                        :
+                                        <div>Get Started</div>
+                                }
+                            </button>
                         </div>
                         <p className="text-xs text-gray-500 mt-3 fnt-sty-nunito">Please make sure you enter correct details.Your details will be verified by us.</p>
                     </div>
