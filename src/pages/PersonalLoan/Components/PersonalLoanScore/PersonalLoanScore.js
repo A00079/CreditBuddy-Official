@@ -6,8 +6,8 @@ export default function Creditscore(props) {
             <section className="text-gray-600 body-font">
                 <div className="container px-5 py-24 mx-auto">
                     <div className="flex flex-col text-center w-full mb-20">
-                        <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">FACTORS AFFECTING </h2>
-                        <h1 className="title-font sm:text-4xl text-3xl mb-4 font-bold text-indigo-600">Factors Affecting Personal Loan Eligibility</h1>
+                        <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1 fnt-sty-nunito">FACTORS AFFECTING </h2>
+                        <h1 className="title-font sm:text-4xl text-3xl mb-4 font-bold text-indigo-600 fnt-sty-nunito">Factors Affecting Personal Loan Eligibility</h1>
                         <p className="lg:w-4/3 mx-auto leading-relaxed text-base">The following are some key factors that are taken into consideration by lenders before offering a personal loan to an individual. While the weight assigned to different factors may vary from lender to lender, the following list does provide a snapshot of key factor that a lender considers when determining a prospective borrower’s eligibility for a personal loan:</p>
                     </div>
                     <div className="flex flex-wrap -m-2">

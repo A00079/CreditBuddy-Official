@@ -29,7 +29,7 @@ const SubNavBanner = () => {
                                             <div className="mr-4 pt-1">
                                                 <Lottie options={defaultOptions} lotti={manRunning} height={25} width={25} />
                                             </div>
-                                            <small className="text-white mt-2"
+                                            <small className="text-white mt-2 fnt-sty-nunito"
                                             >Big news! We're excited to announce a brand new
                                             product.</small
                                             >

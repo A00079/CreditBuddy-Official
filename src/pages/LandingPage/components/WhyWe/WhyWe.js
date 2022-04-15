@@ -93,7 +93,7 @@ const WhyWe = () => {
 
                     <section className="px-4 sm:px-12 pt-12 bg-white">
                         <div className="relative flex items-end font-bold">
-                            <h2 className="text-2xl">Our Products</h2>
+                            <h2 className="text-2xl fnt-sty-nunito">Our Products</h2>
                             {/* <a  className="ml-10 flex items-center text-gray-400">
                                 <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" className="ml-3 h-3.5 svg-inline--fa fa-chevron-right fa-w-8 fa-9x"><path fill="currentColor" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg>
                             </a> */}
@@ -105,7 +105,7 @@ const WhyWe = () => {
                                         return (
                                             <li key={index} className="h-full w-full p-5 cursor-pointer bg-gray-100 rounded-xl flex flex-col items-center justify-center text-center duration-300 hover:bg-white hover:shadow-2xl">
                                                 <img className="max-h-20" src={`/img/LandingScreen/ourproduct/${el.img}`} alt="" />
-                                                <span className="font-semibold">{el.title}</span>
+                                                <span className="font-semibold fnt-sty-nunito">{el.title}</span>
                                             </li>
                                         )
                                     })

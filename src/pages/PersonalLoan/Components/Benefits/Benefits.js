@@ -8,8 +8,8 @@ export default function Benefits(props) {
                 <div className="container px-5 py-24 mx-auto">
                     <div className="flex flex-wrap w-full mb-20">
                         <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
-                            <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">BENEFITS</h2>
-                            <h1 className="title-font sm:text-4xl text-3xl mb-10 font-bold text-indigo-600">BENEFITS OF PERSONAL LOAN</h1>
+                            <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1 fnt-sty-nunito">BENEFITS</h2>
+                            <h1 className="title-font sm:text-4xl text-3xl mb-10 font-bold text-indigo-600 fnt-sty-nunito">BENEFITS OF PERSONAL LOAN</h1>
                             <div className="h-1 w-20 bg-indigo-500 rounded"></div>
                         </div>
                         <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">This is an unsecured loan, which means you do not need to provide a collateral to borrow. Banks and financial institutions can offer this loan at a lower interest rate, if you have a good credit score.</p>

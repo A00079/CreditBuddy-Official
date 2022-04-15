@@ -39,26 +39,26 @@ export default function CreditRedeem() {
     <div className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
-          <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Credit Redeem</h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase fnt-sty-nunito">Credit Redeem</h2>
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl fnt-sty-nunito">
           How Can I Redeem Reward Points?
           </p>
-          <p className="mt-4 max-w-2xl text-sm text-gray-700 lg:mx-auto">
+          <p className="mt-4 max-w-2xl text-sm text-gray-700 lg:mx-auto fnt-sty-nunito">
           Once the credit card customer has accumulated a sufficient amount of points, they can redeem those points for a variety of options provided by the bank. You can redeem your reward points in any of the following ways, depending on what your bank offers.
           </p>
         </div>
 
         <div className="mt-10">
-          <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+          <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 fnt-sty-nunito">
             {features.map((feature) => (
               <div key={feature.name} className="relative">
                 <dt>
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
                     <feature.icon className="h-6 w-6" aria-hidden="true" />
                   </div>
-                  <p className="ml-16 text-lg leading-6 font-medium text-gray-900">{feature.name}</p>
+                  <p className="ml-16 text-lg leading-6 font-medium text-gray-900 fnt-sty-nunito">{feature.name}</p>
                 </dt>
-                <dd className="mt-2 ml-16 text-sm text-gray-600">{feature.description}</dd>
+                <dd className="mt-2 ml-16 text-sm text-gray-600 fnt-sty-nunito">{feature.description}</dd>
               </div>
             ))}
           </dl>

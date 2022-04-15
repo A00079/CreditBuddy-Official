@@ -6,8 +6,8 @@ export default function BenefitsDematAccount(props) {
             <section className="text-gray-600 body-font">
                 <div className="container px-5 py-24 mx-auto">
                     <div className="flex flex-col text-center w-full mb-20">
-                        <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">BENEFITS</h2>
-                        <h1 className="title-font sm:text-4xl text-3xl mb-10 font-bold text-indigo-600">BENEFITS OF DEMAT ACCOUNT</h1>
+                        <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1 fnt-sty-nunito">BENEFITS</h2>
+                        <h1 className="title-font sm:text-4xl text-3xl mb-10 font-bold text-indigo-600 fnt-sty-nunito">BENEFITS OF DEMAT ACCOUNT</h1>
                     </div>
                     <div className="flex flex-wrap -m-4">
                         <div className="p-4 md:w-1/3">

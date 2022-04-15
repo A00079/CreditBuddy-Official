@@ -56,7 +56,7 @@ const Navbar = () => {
                 >
                   <div className="flex justify-start lg:w-0 lg:flex-1">
                     <Link to='/'>
-                      <span className="text-white text-xl pl-20 sm:px-16 font-bold">Credit Buddy</span>
+                      <span className="text-white text-xl pl-20 sm:px-16 font-bold fnt-sty-nunito">Credit Buddy</span>
                     </Link>
                   </div>
                   {/* <div className="-mr-2 -my-2 pt-1 md:hidden">
@@ -86,7 +86,7 @@ const Navbar = () => {
                     <NavItems />
                     <Link to='contact-us'>
                       <div
-                        className="text-base md:text-sm mt-1 font-medium text-white hover:text-gray-300"
+                        className="text-base md:text-sm mt-1 font-medium text-white hover:text-gray-300 fnt-sty-nunito"
                       >
                         Contact
                       </div>
@@ -141,7 +141,7 @@ const Navbar = () => {
                         </div>
                         <div className="mt-2">
                           <h4
-                            className="text-md p-2 pl-0 mb-2 text-left font-semibold text-gray-400 uppercase pt-1"
+                            className="text-md p-2 pl-0 mb-2 text-left font-semibold text-gray-400 uppercase pt-1 fnt-sty-nunito"
                           >
                             Loans <p className='text-gray-700'>{mbmenu}</p>
                           </h4>
@@ -155,7 +155,7 @@ const Navbar = () => {
                                     src="https://dummyimage.com/80x80"
                                   />
                                   <div className="flex-grow">
-                                    <h2 className="text-gray-900 title-font text-sm font-bold">
+                                    <h2 className="text-gray-900 title-font text-sm font-bold fnt-sty-nunito">
                                       Home Loan
                                     </h2>
                                   </div>
@@ -171,7 +171,7 @@ const Navbar = () => {
                                     src="https://dummyimage.com/80x80"
                                   />
                                   <div className="flex-grow">
-                                    <h2 className="text-gray-900 title-font text-sm font-bold">
+                                    <h2 className="text-gray-900 title-font text-sm font-bold fnt-sty-nunito">
                                       Personal Loan
                                     </h2>
                                   </div>
@@ -187,7 +187,7 @@ const Navbar = () => {
                                     src="https://dummyimage.com/80x80"
                                   />
                                   <div className="flex-grow">
-                                    <h2 className="text-gray-900 title-font text-sm font-bold">
+                                    <h2 className="text-gray-900 title-font text-sm font-bold fnt-sty-nunito">
                                       Used Car Loan
                                     </h2>
                                   </div>
@@ -203,7 +203,7 @@ const Navbar = () => {
                                     src="https://dummyimage.com/80x80"
                                   />
                                   <div className="flex-grow">
-                                    <h2 className="text-gray-900 title-font text-sm font-bold">
+                                    <h2 className="text-gray-900 title-font text-sm font-bold fnt-sty-nunito">
                                       Car Loan
                                     </h2>
                                   </div>
@@ -219,7 +219,7 @@ const Navbar = () => {
                                     src="https://dummyimage.com/80x80"
                                   />
                                   <div className="flex-grow">
-                                    <h2 className="text-gray-900 title-font text-sm font-bold">
+                                    <h2 className="text-gray-900 title-font text-sm font-bold fnt-sty-nunito">
                                       Educational Loan
                                     </h2>
                                   </div>
@@ -232,7 +232,7 @@ const Navbar = () => {
                       <div className="pt-2 pb-6 px-5 border-b-2 border-gray-200 border-dashed">
                         <div className="mt-2">
                           <h4
-                            className="text-md p-2 pl-0 mb-2 text-left font-semibold text-gray-400 uppercase pt-1"
+                            className="text-md p-2 pl-0 mb-2 text-left font-semibold text-gray-400 uppercase pt-1 fnt-sty-nunito"
                           >
                             Investments
                           </h4>
@@ -246,7 +246,7 @@ const Navbar = () => {
                                     src="https://dummyimage.com/80x80"
                                   />
                                   <div className="flex-grow">
-                                    <h2 className="text-gray-900 title-font text-sm font-bold">
+                                    <h2 className="text-gray-900 title-font text-sm font-bold fnt-sty-nunito">
                                       Demat Account
                                     </h2>
                                   </div>
@@ -262,7 +262,7 @@ const Navbar = () => {
                                     src="https://dummyimage.com/80x80"
                                   />
                                   <div className="flex-grow">
-                                    <h2 className="text-gray-900 title-font text-sm font-bold">
+                                    <h2 className="text-gray-900 title-font text-sm font-bold fnt-sty-nunito">
                                       Saving Account
                                     </h2>
                                   </div>
@@ -278,7 +278,7 @@ const Navbar = () => {
                                     src="https://dummyimage.com/80x80"
                                   />
                                   <div className="flex-grow">
-                                    <h2 className="text-gray-900 title-font text-sm font-bold">
+                                    <h2 className="text-gray-900 title-font text-sm font-bold fnt-sty-nunito">
                                       Mutual Funds
                                     </h2>
                                   </div>
@@ -294,7 +294,7 @@ const Navbar = () => {
                                     src="https://dummyimage.com/80x80"
                                   />
                                   <div className="flex-grow">
-                                    <h2 className="text-gray-900 title-font text-sm font-bold">
+                                    <h2 className="text-gray-900 title-font text-sm font-bold fnt-sty-nunito">
                                       Fixed Deposit
                                     </h2>
                                   </div>
@@ -307,7 +307,7 @@ const Navbar = () => {
                       <div className="pt-2 pb-6 px-5 border-b-2 border-gray-200 border-dashed">
                         <div className="mt-2">
                           <h4
-                            className="text-md p-2 pl-0 mb-2 text-left font-semibold text-gray-400 uppercase pt-1"
+                            className="text-md p-2 pl-0 mb-2 text-left font-semibold text-gray-400 uppercase pt-1 fnt-sty-nunito"
                           >
                             Learn & Resources
                           </h4>
@@ -414,7 +414,7 @@ const Navbar = () => {
                                   clipRule="evenodd"
                                 ></path>
                               </svg>
-                              <p className="text-gray-900 title-font text-sm font-bold">
+                              <p className="text-gray-900 title-font text-sm font-bold fnt-sty-nunito">
                                 Help Center
                               </p>
                             </div>

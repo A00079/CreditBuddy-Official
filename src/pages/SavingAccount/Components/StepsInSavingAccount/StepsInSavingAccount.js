@@ -6,8 +6,8 @@ export default function StepsInSavingAccount(props) {
         <>
             <section className="text-gray-600 body-font">
                 <div className="container px-5 pb-28 mx-auto">
-                <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">SAVINGS ACCOUNTS </h2>
-                    <h1 className="title-font sm:text-4xl text-3xl mb-10 font-bold text-indigo-600">TYPES OF SAVINGS ACCOUNTS
+                <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1 fnt-sty-nunito">SAVINGS ACCOUNTS </h2>
+                    <h1 className="title-font sm:text-4xl text-3xl mb-10 font-bold text-indigo-600 fnt-sty-nunito">TYPES OF SAVINGS ACCOUNTS
                     </h1>
                     <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6 sm:mx-8">
                         {/* <div className="p-4 md:w-full flex text-left text-indigo-600 font-bold">

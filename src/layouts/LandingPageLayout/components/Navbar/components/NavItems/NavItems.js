@@ -11,13 +11,13 @@ export default function Navitems() {
                     <button
                         className="group rounded-md text-white inline-flex items-center md:text-sm text-base font-medium hover:text-gray-400 focus:outline-none mr-10 focus:text-indigo-500"
                     >
-                        <span>Credit Card</span>
+                        <span className="fnt-sty-nunito">Credit Card</span>
                     </button>
                 </ Link>
                 <button
                     className="loancontainer group rounded-md text-white inline-flex items-center md:text-sm text-base font-medium hover:text-gray-400 focus:outline-none"
                 >
-                    <span>Loans</span>
+                    <span className="fnt-sty-nunito">Loans</span>
                     <svg
                         className="ml-2 h-5 w-5 text-white group-hover:text-gray-500 transition-all duration-500"
                         xmlns="http://www.w3.org/2000/svg"
@@ -50,10 +50,10 @@ export default function Navitems() {
                                 </div>
                                 <Link to='/home-loan'>
                                     <div className="ml-4">
-                                        <p className="text-base font-medium text-gray-900">
+                                        <p className="text-base font-medium text-gray-900 fnt-sty-nunito">
                                             Home Loan
                                         </p>
-                                        <p className="mt-1 text-sm text-gray-500">
+                                        <p className="mt-1 text-sm text-gray-500 fnt-sty-nunito">
                                             Get a better understanding of where your traffic is
                                             coming from.
                                         </p>
@@ -72,10 +72,10 @@ export default function Navitems() {
                                 <Link to='/personal-loan'>
 
                                     <div className="ml-4">
-                                        <p className="text-base font-medium text-gray-900">
+                                        <p className="text-base font-medium text-gray-900 fnt-sty-nunito">
                                             Personal Loan
                                         </p>
-                                        <p className="mt-1 text-sm text-gray-500">
+                                        <p className="mt-1 text-sm text-gray-500 fnt-sty-nunito">
                                             Speak directly to your customers in a more meaningful
                                             way.
                                         </p>
@@ -89,7 +89,7 @@ export default function Navitems() {
             </div>
             <div className="relative">
                 <button
-                    className="loancontainer group rounded-md text-white inline-flex md:text-sm items-center text-base font-medium hover:text-gray-400 focus:outline-none"
+                    className="loancontainer group rounded-md text-white inline-flex md:text-sm items-center text-base font-medium hover:text-gray-400 focus:outline-none fnt-sty-nunito"
                 >
                     <span>Investments</span>
                     <svg
@@ -125,10 +125,10 @@ export default function Navitems() {
                                 <Link to='/demat-account'>
 
                                     <div className="ml-4">
-                                        <p className="text-base font-medium text-gray-900">
+                                        <p className="text-base font-medium text-gray-900 fnt-sty-nunito">
                                             Demat Account
                                         </p>
-                                        <p className="mt-1 text-sm text-gray-500">
+                                        <p className="mt-1 text-sm text-gray-500 fnt-sty-nunito">
                                             Get all of your questions answered in our forums or
                                             contact support.
                                         </p>
@@ -145,10 +145,10 @@ export default function Navitems() {
                                 <Link to='/saving-account'>
 
                                     <div className="ml-4">
-                                        <p className="text-base font-medium text-gray-900">
+                                        <p className="text-base font-medium text-gray-900 fnt-sty-nunito">
                                             Savings Account
                                         </p>
-                                        <p className="mt-1 text-sm text-gray-500">
+                                        <p className="mt-1 text-sm text-gray-500 fnt-sty-nunito">
                                             Learn how to maximize our platform to get the most out
                                             of it.
                                         </p>
