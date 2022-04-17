@@ -7,7 +7,7 @@ export default function PersonalLoan(props) {
             <div className='relative'>
                 <PersonalLoanForm />
                 <PersonalLoanScore />
-                {/* <PersonalLoanCampaigns /> */}
+                <PersonalLoanCampaigns />
                 <WhatIsPersonalLoan />
                 <StepsPersonalLoan />
                 <FactorsAffecting />

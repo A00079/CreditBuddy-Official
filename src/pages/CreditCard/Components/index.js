@@ -6,3 +6,4 @@ export { default as CreditLimit } from './CreditLimit';
 export { default as CreditProsCons } from './CreditProsCons';
 export { default as CreditRedeem } from './CreditRedeem';
 export { default as TypesCreditCards } from './TypesCreditCards';
+export { default as CreditCampaigns } from './CreditCampaigns';

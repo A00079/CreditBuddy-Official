@@ -1,92 +1,97 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import TextField from '@mui/material/TextField';
-
+import firebase from '../../utils/firebase';
 export default function DynamicCampaings(props) {
     const [open, setOpen] = React.useState(false);
+    const [cardsDetailData, setCardsDetailData] = React.useState([]);
 
-    const handleClickOpen = (link) => {
+    const handleFormOpen = (obj) => {
+        if (!!obj.actionlink) {
+            console.log('Action link');
+        } else if (!!obj.formlink) {
+            console.log('Form link');
+        }
         setOpen(true);
     };
 
     const handleClose = () => {
         setOpen(false);
     };
-    const [cardsDetailData, setCardsDetailData] = React.useState([
-        {
-            "card_name": "HDFC SECURITY*",
-            "img": "hdfcsecurity.jpg",
-            "exchange": "BSE|NSE",
-            "trading_aof": "0",
-            "demat_aof_accoun": "0",
-            "link": "https://allinone.hdfcsec.com/lp/open-trading-account1?utm_Source=Affiliate&utm_Medium=SS_17&utm_Campaign=Emailer&utm_Term=CPA_Dec.&utm_Content=cr17",
-            "type": "HDFC"
-        },
-        {
-            "card_name": "AXIS SECURITY*",
-            "img": "axissecurity.png",
-            "exchange": "BSE|NSE",
-            "trading_aof": "0",
-            "demat_aof_accoun": "0",
-            "link": "https://simplehai.axisdirect.in/SuperOptions-trading-account?utm_source=emailer&utm_medium=Convonix_1348_2860_2860_{sub_aff_id}_&utm_campaign=open-account-Superoptionsmailer1",
-            "type": "AXIS"
-        },
-        {
-            "card_name": "ICICI DIRECT*",
-            "img": "icicidirect.jpg",
-            "exchange": "BSE|NSE",
-            "trading_aof": "0",
-            "demat_aof_accoun": "0",
-            "link": "https://play.google.com/store/apps/details?id=com.icici.direct&referrer=utm_source=candid-{aff_id}_{sub_aff_id}_{aff_sub1}&utm_medium=banner&utm_term=oao&utm_content=na&utm_campaign=na",
-            "type": "ICICI"
-        },
-        {
-            "card_name": "GROWW",
-            "img": "groww.png",
-            "exchange": "BSE|NSE",
-            "trading_aof": "0",
-            "demat_aof_accoun": "0",
-            "link": "https://groww.in/?%243p=a_optimidea_network&%24aaid&~click_id=61cc3f615076820342e4deb7&~secondary_publisher=174&_branch_match_id=976395917135034117&_branch_referrer=H4sIAAAAAAAAAxXKuw7CIBQA0K%2BpYykFQU2Ik6NDO7gSHldLQSCAIf698cxnay3XC0KvknofVc5jcNGjZTmver0%2FdtDXYaYkCyVTbu7tLCgZofVU%2FGHgNxOc8dJZwbAx5MnwceLsNE%2BEzkAtaP5PFUyKVpWvzB8dXN2gCMzpDzMqz0d8AAAA",
-            "type": "GROWW",
-        }
-    ]);
 
+    useEffect(() => {
+        fetchCampaings();
+    }, [])
+
+    const fetchCampaings = () => {
+        if (!!props.campaignName) {
+            firebase.child(props.campaignName).on('value', snapshot => {
+                if (snapshot.val() != null) {
+                    let fetchedData = [];
+                    Object.keys(snapshot.val()).map((el, index) => {
+                        fetchedData.push(snapshot.val()[el]);
+                    });
+                    setCardsDetailData(fetchedData);
+                } else {
+                    setCardsDetailData([]);
+                }
+            });
+        }
+    }
     return (
         <>
             <section className="text-gray-600 body-font">
                 <div className="container px-5 py-24 mx-auto">
                     <div className="flex flex-col text-center w-full mb-20">
-                        <h1 className="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest fnt-sty-nunito">WE FOUND THE BEST DEMAT ACCOUNT </h1>
-                       <p className="lg:w-2/3 mx-auto leading-relaxed text-base fnt-sty-nunito">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
+                        <h1 className="text-2xl font-medium title-font mb-4 text-gray-900 uppercase tracking-widest fnt-sty-nunito">WE FOUND THE BEST {!!props.campaignName ? props.campaignName : ''} </h1>
+                        <p className="lg:w-2/3 mx-auto leading-relaxed text-base fnt-sty-nunito">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
                     </div>
-                    <div className="flex flex-wrap sm:px-10">
+                    <div className="grid grid-cols-12 gap-4">
                         {
-                            cardsDetailData.map((el, index) => {
+                            cardsDetailData.length !== 0 && cardsDetailData.map((el, index) => {
                                 return (
-                                    <div key={index} className="p-2 lg:w-1/2 w-full">
-                                        <div className="bg-white shadow-xl border shadow-sm border-gray-300 rounded-md p-2 h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-                                            <img alt="team" className="flex-shrink-0 rounded-lg w-48 object-cover object-center sm:mb-0 mb-4" src={`/img/Demat-Account/Campaings/${el.img}`} />
-                                            <div className="flex-grow sm:pl-8">
-                                                <h2 className="w-full title-font font-bold text-lg  text-indigo-700 fnt-sty-nunito">{el.card_name}</h2>
-                                                <h3 className="text-gray-500 mb-1 text-sm fnt-sty-nunito"><span className="text-gray-800 font-bold mb-3 text-sm fnt-sty-nunito">Exchange</span> : {el.exchange}</h3>
-                                                <div className="mb-1 flex flex-col items-center sm:items-start">
-                                                    <p className="text-gray-800 font-bold mb-1 text-sm fnt-sty-nunito">Trading AOF</p>
-                                                    <p className="text-gray-500 text-sm fnt-sty-nunito">{el.trading_aof}</p>
+                                    <div key={index} className="sm:col-span-4 col-span-12 p-2">
+                                        <div className='bg-white border border-gray-300 rounded-md'>
+                                            <div className="bg-white  shadow-xl border-l-2 shadow-sm border-blue-600 rounded-md px-3 py-3 h-full flex sm:flex-col flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+                                                <div className='flex flex-col items-start space-y-3'>
+                                                    <div className='flex flex-row justify-start space-x-3 items-center'>
+                                                        <div className='rounded-full bg-gray-200 border-2 border-dashed border-blue-600 p-2 uppercase'>
+                                                            {
+                                                                el.campaignname.substring(0, 2)
+                                                            }
+                                                        </div>
+                                                        <div>
+                                                            <h2 className="w-full text-left title-font font-bold text-md text-indigo-700 fnt-sty-nunito">{el.campaignname}</h2>
+                                                            <h2 className="w-full text-left title-font font-bold text-xs text-gray-500 fnt-sty-nunito">{el.campaigntype}</h2>
+                                                        </div>
+
+                                                    </div>
+                                                    <div className='flex flex-row justify-between items-center h-24'>
+                                                        <img alt="team" className="bg-gray-200 rounded-md flex-shrink-0 rounded-lg w-36 object-cover object-center sm:mb-0 mb-4 p-2" src={el.campaignimg} />
+                                                        <div className='grid grid-cols-12 gap-2 px-5'>
+                                                            {
+                                                                Object.keys(el).map((objKeys) => {
+                                                                    return (
+                                                                        objKeys !== 'campaignimg' && objKeys !== 'actionlink' && objKeys !== 'campaignname' && objKeys !== 'formlink' && objKeys !== 'campaigntype' ?
+                                                                            <h3 className="col-span-6 text-blue-500 text-sm fnt-sty-nunito"><span className="text-gray-500 font-bold text-xs fnt-sty-nunito uppercase">{objKeys}</span> {el[objKeys]}</h3>
+                                                                            : ""
+                                                                    )
+                                                                })
+                                                            }
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <h3 className="text-gray-500 mb-1 text-sm">
-                                                    <span className="text-gray-800 font-bold mb-3 text-sm fnt-sty-nunito">
-                                                        Demat AOF
-                                                    </span> : {el.demat_aof_accoun}
-                                                </h3>
-                                                <span className="inline-flex">
-                                                    <button onClick={() => handleClickOpen(el.link)} className="mt-2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-sm">
-                                                        Apply Now
-                                                    </button>
-                                                </span>
+                                                <div className="mt-2 border-t border-gray-400 w-full border-dashed flex justify-end items-end">
+                                                    <span className="inline-flex">
+                                                        <button onClick={() => handleFormOpen(el)} className="mt-2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-xs">
+                                                            Apply Now
+                                                        </button>
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -106,9 +111,13 @@ export default function DynamicCampaings(props) {
                     {"General Details"}
                 </DialogTitle>
                 <DialogContent>
-                    <div className='flex flex-row justify-between items-center'>
-                        <TextField id="outlined-basic" label="First Name" variant="outlined" />
-                        <TextField id="outlined-basic" label="Last Name" variant="outlined" />
+                    <div className='flex flex-row justify-between space-x-4 py-5 items-center w-full'>
+                        <div>
+                            <TextField size='small' id="outlined-basic" label="First Name" variant="outlined" />
+                        </div>
+                        <div>
+                            <TextField size='small' id="outlined-basic" label="Last Name" variant="outlined" />
+                        </div>
                     </div>
                 </DialogContent>
                 <DialogActions>

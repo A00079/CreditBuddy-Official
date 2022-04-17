@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CreditForm, CreditScore, WhatIsCreditCard, StepsCreditCard, TypesCreditCards, CreditLimit, CreditProsCons, CreditRedeem } from "./Components";
+import { CreditForm, CreditScore, WhatIsCreditCard, CreditCampaigns, StepsCreditCard, TypesCreditCards, CreditLimit, CreditProsCons, CreditRedeem } from "./Components";
 export default function Creditcard(props) {
     return (
         <React.Fragment>
@@ -8,7 +8,7 @@ export default function Creditcard(props) {
                 <CreditForm />
                 <CreditScore />
                 <WhatIsCreditCard />
-                {/* <CreditCampaigns /> */}
+                <CreditCampaigns />
                 <StepsCreditCard />
                 <TypesCreditCards />
                 <CreditLimit />
