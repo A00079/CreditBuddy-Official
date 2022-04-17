@@ -9,15 +9,30 @@ import firebase from '../../utils/firebase';
 export default function DynamicCampaings(props) {
     const [open, setOpen] = React.useState(false);
     const [cardsDetailData, setCardsDetailData] = React.useState([]);
+    const [selectedCampCardDetails, setSelectedCampCardDetails] = useState('');
+    const [campFormInputs, setCampFormInputs] = useState({});
+
+    const handleCampFormIputs = (e) => {
+        setCampFormInputs({
+            ...campFormInputs,
+            [e.target.name]: e.target.value
+        });
+    }
 
     const handleFormOpen = (obj) => {
         if (!!obj.actionlink) {
-            console.log('Action link');
+            console.log('Action link', obj.actionlink);
+            window.open(obj.actionlink, '_blank');
         } else if (!!obj.formlink) {
+            setOpen(true);
+            setSelectedCampCardDetails(obj);
             console.log('Form link');
         }
-        setOpen(true);
     };
+
+    const handleCampFormSubmit = () => {
+        console.log('campFormInputs',campFormInputs);
+    }
 
     const handleClose = () => {
         setOpen(false);
@@ -108,23 +123,48 @@ export default function DynamicCampaings(props) {
                 aria-describedby="alert-dialog-description"
             >
                 <DialogTitle id="alert-dialog-title">
-                    {"General Details"}
-                </DialogTitle>
-                <DialogContent>
-                    <div className='flex flex-row justify-between space-x-4 py-5 items-center w-full'>
+                    <div className='flex flex-row justify-between items-center border-b border-gray-300 pb-3'>
                         <div>
-                            <TextField size='small' id="outlined-basic" label="First Name" variant="outlined" />
+                            <p>{!!props.campaignName ? props.campaignName : ''}</p>
+                            <p className='text-xs font-medium'>{selectedCampCardDetails.campaignname}</p>
                         </div>
                         <div>
-                            <TextField size='small' id="outlined-basic" label="Last Name" variant="outlined" />
+                            <div className='rounded-md'>
+                                <img src='./img/creditbuddy-logo.png' className='object-contain object-cover w-8 mx-auto' />
+                            </div>
+                        </div>
+                    </div>
+
+                </DialogTitle>
+                <DialogContent>
+                    <div className='campaign-img-container flex flex-row justify-start w-full items-center'>
+
+                        <div className='bg-gray-50 p-2 border-2 border-dashed border-gray-200 rounded-md'>
+                            <img src={selectedCampCardDetails.campaignimg} className='object-contain  object-cover w-24 mx-auto' />
+                        </div>
+                    </div>
+                    <div className='flex flex-row justify-between space-x-4 py-5 items-center w-full'>
+                        <div>
+                            <TextField onChange={(e) => handleCampFormIputs(e)} value={campFormInputs.first_name} size='small' name="first_name" id="first_name" label="First Name" variant="outlined" />
+                        </div>
+                        <div>
+                            <TextField onChange={(e) => handleCampFormIputs(e)} value={campFormInputs.last_name} size='small' name="last_name" id="last_name" label="Last Name" variant="outlined" />
+                        </div>
+                    </div>
+                    <div className='flex flex-row justify-between space-x-4 items-center w-full'>
+                        <div>
+                            <TextField type='number' onChange={(e) => handleCampFormIputs(e)} value={campFormInputs.contact} size='small' name="contact" id="contact" label="Contact" variant="outlined" />
+                        </div>
+                        <div>
+                            <TextField onChange={(e) => handleCampFormIputs(e)} value={campFormInputs.email} size='small' name="email" id="email" label="Email" variant="outlined" />
                         </div>
                     </div>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose}>Disagree</Button>
-                    <Button onClick={handleClose} autoFocus>
-                        Agree
-                    </Button>
+                    <Button onClick={handleClose}>Cancel</Button>
+                    <button onClick={() => handleCampFormSubmit()} className='px-4 py-2 rounded-md bg-indigo-600 text-white text-xs font-bold'>
+                        Submit
+                    </button>
                 </DialogActions>
             </Dialog>
         </>
