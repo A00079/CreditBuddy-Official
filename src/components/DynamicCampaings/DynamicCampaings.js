@@ -22,12 +22,10 @@ export default function DynamicCampaings(props) {
 
     const handleFormOpen = (obj) => {
         if (!!obj.actionlink) {
-            console.log('Action link', obj.actionlink);
             window.open(obj.actionlink, '_blank');
         } else if (!!obj.formlink) {
             setOpen(true);
             setSelectedCampCardDetails(obj);
-            console.log('Form link');
         }
     };
 
@@ -61,6 +59,7 @@ export default function DynamicCampaings(props) {
                         alert('Details saved successfully');
                         setIsLoading(false);
                         handleClose();
+                        window.open(selectedCampCardDetails.formlink, '_blank');
                     }
                 })
         } else {
