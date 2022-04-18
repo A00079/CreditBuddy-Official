@@ -32,6 +32,7 @@ export default function DynamicCampaings(props) {
 
     const handleCampFormSubmit = () => {
         console.log('campFormInputs',campFormInputs);
+        alert('Thanks for submiting details.');
     }
 
     const handleClose = () => {
@@ -118,6 +119,7 @@ export default function DynamicCampaings(props) {
             </section>
             <Dialog
                 open={open}
+                disableBackdropClick 
                 onClose={handleClose}
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
