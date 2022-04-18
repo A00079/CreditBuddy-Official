@@ -11,6 +11,7 @@ export default function DynamicCampaings(props) {
     const [cardsDetailData, setCardsDetailData] = React.useState([]);
     const [selectedCampCardDetails, setSelectedCampCardDetails] = useState('');
     const [campFormInputs, setCampFormInputs] = useState({});
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleCampFormIputs = (e) => {
         setCampFormInputs({
@@ -31,8 +32,41 @@ export default function DynamicCampaings(props) {
     };
 
     const handleCampFormSubmit = () => {
-        console.log('campFormInputs',campFormInputs);
-        alert('Thanks for submiting details.');
+        console.log('campFormInputs', campFormInputs);
+        setIsLoading(true);
+        if (!!campFormInputs.firstname && !!campFormInputs.contact && !!campFormInputs.lastname && !!campFormInputs.email) {
+            let data =
+            {
+                "firstName": campFormInputs.firstname,
+                "contact": campFormInputs.contact,
+                "lastName": campFormInputs.lastname,
+                "email": campFormInputs.email,
+                "birthDate": "",
+                "averageAnnualIncome": "",
+                "gender": ""
+            }
+            console.log('Data ===>', data);
+            firebase.child(props.DB_PATH).push(
+                data,
+                err => {
+                    if (err) {
+                        setIsLoading(false);
+                        alert('Something Went Wrong...');
+                    } else {
+                        document.getElementById('firstname').value = "";
+                        document.getElementById('lastname').value = "";
+                        document.getElementById('contact').value = "";
+                        document.getElementById('email').value = "";
+                        setCampFormInputs({});
+                        alert('Details saved successfully');
+                        setIsLoading(false);
+                        handleClose();
+                    }
+                })
+        } else {
+            setIsLoading(false);
+            alert('All fields are mandatory.');
+        }
     }
 
     const handleClose = () => {
@@ -119,7 +153,7 @@ export default function DynamicCampaings(props) {
             </section>
             <Dialog
                 open={open}
-                disableBackdropClick 
+                disableBackdropClick
                 onClose={handleClose}
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
@@ -147,10 +181,10 @@ export default function DynamicCampaings(props) {
                     </div>
                     <div className='flex flex-row justify-between space-x-4 py-5 items-center w-full'>
                         <div>
-                            <TextField onChange={(e) => handleCampFormIputs(e)} value={campFormInputs.first_name} size='small' name="first_name" id="first_name" label="First Name" variant="outlined" />
+                            <TextField onChange={(e) => handleCampFormIputs(e)} value={campFormInputs.firstname} size='small' name="firstname" id="firstname" label="First Name" variant="outlined" />
                         </div>
                         <div>
-                            <TextField onChange={(e) => handleCampFormIputs(e)} value={campFormInputs.last_name} size='small' name="last_name" id="last_name" label="Last Name" variant="outlined" />
+                            <TextField onChange={(e) => handleCampFormIputs(e)} value={campFormInputs.lastname} size='small' name="lastname" id="lastname" label="Last Name" variant="outlined" />
                         </div>
                     </div>
                     <div className='flex flex-row justify-between space-x-4 items-center w-full'>
@@ -165,7 +199,12 @@ export default function DynamicCampaings(props) {
                 <DialogActions>
                     <Button onClick={handleClose}>Cancel</Button>
                     <button onClick={() => handleCampFormSubmit()} className='px-4 py-2 rounded-md bg-indigo-600 text-white text-xs font-bold'>
-                        Submit
+                        {
+                            isLoading ?
+                                <svg className="w-5 h-5 text-white animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                                :
+                                <div>Submit</div>
+                        }
                     </button>
                 </DialogActions>
             </Dialog>
