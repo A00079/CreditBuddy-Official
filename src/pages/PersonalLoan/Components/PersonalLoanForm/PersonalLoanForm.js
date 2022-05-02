@@ -46,24 +46,24 @@ const PersonalLoanform = (props) => {
                 "gender": input.gender
             }
             console.log('Data ===>', data);
-            firebase.child('user_form_personal_loan').push(
-                data,
-                err => {
-                    if (err) {
-                        setIsLoading(false);
-                        alert('Something Went Wrong...');
-                    } else {
-                        document.getElementById('firstname').value = "";
-                        document.getElementById('lastname').value = "";
-                        document.getElementById('contact').value = "";
-                        document.getElementById('email').value = "";
-                        document.getElementById('birthdate').value = "";
-                        document.getElementById('averageannualincome').value = "";
-                        setSelectedOption('Gender');
-                        alert('Details saved successfully');
-                        setIsLoading(false);
-                    }
+
+            firebase.firestore().collection('user_form_personal_loan')
+                .add(data)
+                .then(function (docRef) {
+                    document.getElementById('firstname').value = "";
+                    document.getElementById('lastname').value = "";
+                    document.getElementById('contact').value = "";
+                    document.getElementById('email').value = "";
+                    document.getElementById('birthdate').value = "";
+                    document.getElementById('averageannualincome').value = "";
+                    setSelectedOption('Gender');
+                    alert('Details saved successfully');
+                    setIsLoading(false);
                 })
+                .catch(function (error) {
+                    setIsLoading(false);
+                    alert('Something Went Wrong...');
+                });
         } else {
             setIsLoading(false);
             alert('All fields are mandatory.');
@@ -151,7 +151,7 @@ const PersonalLoanform = (props) => {
                         </div>
                         <div className='w-42'>
                             <button onClick={() => saveData()} className="text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded text-lg fnt-sty-nunito">
-                            {
+                                {
                                     isLoading ?
                                         <svg className="w-5 h-5 text-white animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
                                         :

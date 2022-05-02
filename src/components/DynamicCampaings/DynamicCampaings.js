@@ -78,17 +78,32 @@ export default function DynamicCampaings(props) {
 
     const fetchCampaings = () => {
         if (!!props.campaignName) {
-            firebase.child(props.campaignName).on('value', snapshot => {
-                if (snapshot.val() != null) {
-                    let fetchedData = [];
-                    Object.keys(snapshot.val()).map((el, index) => {
-                        fetchedData.push(snapshot.val()[el]);
-                    });
-                    setCardsDetailData(fetchedData);
-                } else {
-                    setCardsDetailData([]);
-                }
-            });
+            // firebase.child(props.campaignName).on('value', snapshot => {
+            //     if (snapshot.val() != null) {
+            //         let fetchedData = [];
+            //         Object.keys(snapshot.val()).map((el, index) => {
+            //             fetchedData.push(snapshot.val()[el]);
+            //         });
+            //         setCardsDetailData(fetchedData);
+            //     } else {
+            //         setCardsDetailData([]);
+            //     }
+            // });
+
+            firebase.firestore().collection(props.campaignName).get().then((data) => {
+                let fetchedData = [];
+                data.docs.forEach(item => {
+                    let obj = {};
+                    console.log('item.data()', item.id);
+                    console.log('item.data()', item.data());
+                    obj = item.data();
+                    obj['id'] = item.id;
+                    fetchedData.push(obj);
+                });
+                setCardsDetailData(fetchedData);
+            }).catch((e) => {
+                setCardsDetailData([]);
+            })
         }
     }
     return (
@@ -125,7 +140,7 @@ export default function DynamicCampaings(props) {
                                                             {
                                                                 Object.keys(el).map((objKeys) => {
                                                                     return (
-                                                                        objKeys !== 'campaignimg' && objKeys !== 'actionlink' && objKeys !== 'campaignname' && objKeys !== 'formlink' && objKeys !== 'campaigntype' ?
+                                                                        objKeys !== 'id' && objKeys !== 'campaignimg' && objKeys !== 'actionlink' && objKeys !== 'campaignname' && objKeys !== 'formlink' && objKeys !== 'campaigntype' ?
                                                                             <h3 className="col-span-6 text-blue-500 text-sm fnt-sty-nunito"><span className="text-gray-500 font-bold text-xs fnt-sty-nunito uppercase">{objKeys}</span> {el[objKeys]}</h3>
                                                                             : ""
                                                                     )

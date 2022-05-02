@@ -4,7 +4,7 @@ export default function SavingAccountCampaigns(props) {
 
     return (
         <React.Fragment>
-            <DynamicCampaings campaignName={'Saving Account'} DB_PATH={'user_form_saving_account'} />
+            <DynamicCampaings campaignName={'savingaccount'} DB_PATH={'user_form_saving_account'} />
         </React.Fragment>
     )
 }

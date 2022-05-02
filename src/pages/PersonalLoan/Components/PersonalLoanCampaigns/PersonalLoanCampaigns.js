@@ -4,7 +4,7 @@ export default function PersonalLoancampaigns(props) {
 
     return (
         <React.Fragment>
-            <DynamicCampaings campaignName={'Personal Loan'}  DB_PATH={'user_form_personal_loan'} />
+            <DynamicCampaings campaignName={'personalloan'}  DB_PATH={'user_form_personal_loan'} />
         </React.Fragment>
     )
 }

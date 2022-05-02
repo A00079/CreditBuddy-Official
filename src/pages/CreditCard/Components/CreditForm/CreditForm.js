@@ -45,24 +45,42 @@ const Creditform = (props) => {
                 "gender": input.gender
             }
             console.log('Data ===>', data);
-            firebase.child('user_form_credit_card').push(
-                data,
-                err => {
-                    if (err) {
-                        setIsLoading(false);
-                        alert('Something Went Wrong...');
-                    } else {
-                        document.getElementById('firstname').value = "";
-                        document.getElementById('lastname').value = "";
-                        document.getElementById('contact').value = "";
-                        document.getElementById('email').value = "";
-                        document.getElementById('birthdate').value = "";
-                        document.getElementById('averageannualincome').value = "";
-                        setSelectedOption('Gender');
-                        alert('Details saved successfully');
-                        setIsLoading(false);
-                    }
+            // firebase.child('user_form_credit_card').push(
+            //     data,
+            //     err => {
+            //         if (err) {
+            //             setIsLoading(false);
+            //             alert('Something Went Wrong...');
+            //         } else {
+            //             document.getElementById('firstname').value = "";
+            //             document.getElementById('lastname').value = "";
+            //             document.getElementById('contact').value = "";
+            //             document.getElementById('email').value = "";
+            //             document.getElementById('birthdate').value = "";
+            //             document.getElementById('averageannualincome').value = "";
+            //             setSelectedOption('Gender');
+            //             alert('Details saved successfully');
+            //             setIsLoading(false);
+            //         }
+            //     })
+
+            firebase.firestore().collection('user_form_credit_card')
+                .add(data)
+                .then(function (docRef) {
+                    document.getElementById('firstname').value = "";
+                    document.getElementById('lastname').value = "";
+                    document.getElementById('contact').value = "";
+                    document.getElementById('email').value = "";
+                    document.getElementById('birthdate').value = "";
+                    document.getElementById('averageannualincome').value = "";
+                    setSelectedOption('Gender');
+                    alert('Details saved successfully');
+                    setIsLoading(false);
                 })
+                .catch(function (error) {
+                    setIsLoading(false);
+                    alert('Something Went Wrong...');
+                });
         } else {
             setIsLoading(false);
             alert('All fields are mandatory.');

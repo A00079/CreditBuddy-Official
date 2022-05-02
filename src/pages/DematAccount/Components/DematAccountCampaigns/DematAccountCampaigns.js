@@ -4,7 +4,7 @@ export default function DematAccountcampaigns(props) {
 
     return (
         <React.Fragment>
-            <DynamicCampaings campaignName={'Demat Account'} DB_PATH={'user_form_demat_account'} />
+            <DynamicCampaings campaignName={'demataccount'} DB_PATH={'user_form_demat_account'} />
         </React.Fragment>
     )
 }
