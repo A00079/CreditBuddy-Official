@@ -42,8 +42,8 @@ const WhyWe = () => {
             <div className="min-h-screen bg-white">
                 <main>
                     <section className="juice3 bg-white bg-opacity-90 py-10">
-                        <div className="container  mx-auto px-4 flex flex-col lg:flex-row">
-                            <div className="relative lg:w-2/3 rounded-xl  bg-cover md:p-0">
+                        <div className="container  mx-auto px-2 flex flex-col lg:flex-row">
+                            <div className="relative lg:w-2/4 rounded-xl  bg-cover md:p-0">
                                 <a href='https://play.google.com/store/apps/details?id=com.icici.direct&referrer=utm_source=candid-{aff_id}_{sub_aff_id}_{aff_sub1}&utm_medium=banner&utm_term=oao&utm_content=na&utm_campaign=na' target='_blank'>
                                     <div className="rounded-lg h-72 sm:h-96 overflow-hidden">
                                         <img alt="content" className="hidden sm:block object-fit object-center h-full w-full" src="
@@ -57,12 +57,12 @@ const WhyWe = () => {
                                 <p className="max-w-xs pr-10 text-secondary font-semibold mt-8"></p>
                                 {/* <button className="mt-20 bg-white font-semibold px-8 py-2 rounded">Shop Now</button> */}
                             </div>
-                            <div className="lg:mt-0 h-60 sm:h-96 lg:ml-6 lg:w-1/3 rounded-xl bg-primary-lite bg-cover">
+                            <div className="lg:mt-0 h-60 sm:h-96 lg:ml-4 lg:w-1/2 rounded-xl bg-primary-lite bg-cover">
                                 <a href='https://simplehai.axisdirect.in/SuperOptions-trading-account?utm_source=emailer&utm_medium=Convonix_1348_2860_2860_{sub_aff_id}_&utm_campaign=open-account-Superoptionsmailer1' target='_blank'>
                                     <img alt="content" className="hidden sm:block rounded-xl object-fit object-center h-full w-full" src="
-                                   ./img/LandingScreen/home-banner2.jpg" />
+                                   ./img/LandingScreen/home-banner2.png" />
                                     <img alt="content" className="block sm:hidden rounded-xl object-fit object-center h-full w-full" src="
-                                   ./img/LandingScreen/mobile-banner2.jpg" />
+                                   ./img/LandingScreen/home-banner2.png" />
                                     {/* <div className="max-w-sm">
                                     <p className="text-3xl md:text-4xl font-semibold uppercase"></p>
                                     <p className="mt-4 font-semibold"></p>
