@@ -58,7 +58,7 @@ const WhyWe = () => {
                                 {/* <button className="mt-20 bg-white font-semibold px-8 py-2 rounded">Shop Now</button> */}
                             </div>
                             <div className="lg:mt-0 h-60 sm:h-96 lg:ml-4 lg:w-1/2 rounded-xl bg-primary-lite bg-cover">
-                                <a href='https://simplehai.axisdirect.in/SuperOptions-trading-account?utm_source=emailer&utm_medium=Convonix_1348_2860_2860_{sub_aff_id}_&utm_campaign=open-account-Superoptionsmailer1' target='_blank'>
+                                <a href='https://skro.in/5221VQ' target='_blank'>
                                     <img alt="content" className="hidden sm:block rounded-xl object-fit object-center h-full w-full" src="
                                    ./img/LandingScreen/home-banner2.png" />
                                     <img alt="content" className="block sm:hidden rounded-xl object-fit object-center h-full w-full" src="
