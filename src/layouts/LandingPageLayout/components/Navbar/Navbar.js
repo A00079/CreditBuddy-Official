@@ -107,7 +107,7 @@ const Navbar = (props) => {
                       </div>
                     </Link>
                     {
-                      props.history.location.pathname == '/special-offers' ?
+                      props.history.location.pathname == '/special-offers' || props.history.location.pathname == 'special-campaign-offers' ?
                         <div
                           onClick={() => handleLogout()}
                           className="cursor-pointer text-base md:text-sm mt-1 font-medium text-white hover:text-gray-300 fnt-sty-nunito"

@@ -16,23 +16,28 @@ function SpecialOffersCampaigns(props) {
         }
     });
 
-    const handleCampaignSelect = (campaign, campaignDB) =>{
+    const handleLogout = () => {
+        localStorage.clear();
+        props.history.push('/');
+    }
+
+    const handleCampaignSelect = (campaign, campaignDB) => {
         setSelectedCampaign(campaign);
         setSelectedCampaignDB(campaignDB);
     }
 
-    const Goto = (routerPath) =>{
+    const Goto = (routerPath) => {
         props.history.push(routerPath);
     }
     return (
         <div>
             <div className='tab-bar w-full flex flex-row justify-between items-center px-36 border-b-2 border-gray-200'>
                 <div className='text-sm text-gray-500 font-bold flex flex-row justify-start items-center'>
-                    <div onClick={() => handleCampaignSelect('creditcard','user_form_credit_card')} className={`${selctedCampaign == 'creditcard' ? 'bg-gray-200' : ''} cursor-pointer border-r border-gray-300 px-3 py-3`}>Credit Card</div>
-                    <div onClick={() => handleCampaignSelect('homeloan','user_form_home_loan')} className={`${selctedCampaign == 'homeloan' ? 'bg-gray-200' : ''} cursor-pointer border-r border-gray-300 px-3 py-3`}>Home Loan</div>
-                    <div onClick={() => handleCampaignSelect('savingaccount','user_form_saving_account')} className={`${selctedCampaign == 'savingaccount' ? 'bg-gray-200' : ''} cursor-pointer border-r border-gray-300 px-3 py-3`}>Saving Account</div>
-                    <div onClick={() => handleCampaignSelect('personalloan','user_form_personal_loan')} className={`${selctedCampaign == 'personalloan' ? 'bg-gray-200' : ''} cursor-pointer border-r border-gray-300 px-3 py-3`}>Personal Loan</div>
-                    <div onClick={() => handleCampaignSelect('demataccount','user_form_demat_account')} className={`${selctedCampaign == 'demataccount' ? 'bg-gray-200' : ''} cursor-pointer px-3 py-3`} >Demat Account</div>
+                    <div onClick={() => handleCampaignSelect('creditcard', 'user_form_credit_card')} className={`${selctedCampaign == 'creditcard' ? 'bg-gray-200' : ''} cursor-pointer border-r border-gray-300 px-3 py-3`}>Credit Card</div>
+                    <div onClick={() => handleCampaignSelect('homeloan', 'user_form_home_loan')} className={`${selctedCampaign == 'homeloan' ? 'bg-gray-200' : ''} cursor-pointer border-r border-gray-300 px-3 py-3`}>Home Loan</div>
+                    <div onClick={() => handleCampaignSelect('savingaccount', 'user_form_saving_account')} className={`${selctedCampaign == 'savingaccount' ? 'bg-gray-200' : ''} cursor-pointer border-r border-gray-300 px-3 py-3`}>Saving Account</div>
+                    <div onClick={() => handleCampaignSelect('personalloan', 'user_form_personal_loan')} className={`${selctedCampaign == 'personalloan' ? 'bg-gray-200' : ''} cursor-pointer border-r border-gray-300 px-3 py-3`}>Personal Loan</div>
+                    <div onClick={() => handleCampaignSelect('demataccount', 'user_form_demat_account')} className={`${selctedCampaign == 'demataccount' ? 'bg-gray-200' : ''} cursor-pointer px-3 py-3`} >Demat Account</div>
                 </div>
                 <div className='flex flex-row justify-start items-center space-x-2 text-indigo-600 text-sm font-bold'>
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
@@ -67,7 +72,7 @@ function SpecialOffersCampaigns(props) {
                                 <p> Contact Us</p>
                             </div>
                         </div>
-                        <div onClick={() => Goto('/')} className='cursor-pointer text-md text-white w-full font-bold py-3 px-5 hover:bg-white hover:text-gray-500'>
+                        <div onClick={() => handleLogout()} className='cursor-pointer text-md text-white w-full font-bold py-3 px-5 hover:bg-white hover:text-gray-500'>
                             <div className='flex flex-row justify-start items-center space-x-3'>
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
                                 <p>Logout</p>
