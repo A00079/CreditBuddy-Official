@@ -8,7 +8,11 @@ import PersonalLoan from "./pages/PersonalLoan";
 import HomeLoan from "./pages/HomeLoan";
 import DematAccount from "./pages/DematAccount";
 import SavingAccount from "./pages/SavingAccount";
-
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import ContactUs from "./pages/ContactUs";
+import SpecialOffersCampaigns from "./pages/SpecialOffersCampaigns";
+import SpecialOffers from "./pages/SpecialOffers";
 
 import { WithLayoutRoute } from "./routers";
 
@@ -51,6 +55,36 @@ function Routes() {
           path="/saving-account"
           layout={LandingPageLayout}
           component={SavingAccount}
+        />
+        <WithLayoutRoute
+          exact
+          path="/sign-in"
+          layout={LandingPageLayout}
+          component={SignIn}
+        />
+        <WithLayoutRoute
+          exact
+          path="/sign-up"
+          layout={LandingPageLayout}
+          component={SignUp}
+        />
+        <WithLayoutRoute
+          exact
+          path="/contact-us"
+          layout={LandingPageLayout}
+          component={ContactUs}
+        />
+        <WithLayoutRoute
+          exact
+          path="/special-campaign-offers"
+          layout={LandingPageLayout}
+          component={SpecialOffersCampaigns}
+        />
+        <WithLayoutRoute
+          exact
+          path="/special-offers"
+          layout={LandingPageLayout}
+          component={SpecialOffers}
         />
       </Switch>
     </Router>

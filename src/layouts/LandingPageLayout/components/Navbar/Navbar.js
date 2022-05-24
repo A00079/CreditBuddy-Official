@@ -3,11 +3,12 @@ import React from "react";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { Link } from 'react-router-dom';
 import { SubNavBanner, NavItems, MobileMenu } from './components';
+import { withRouter } from "react-router";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [hideOnScroll, setHideOnScroll] = useState(true);
   const [mbmenu, setmbmenu] = useState(false);
-
+  const [isLogedIn, setisLogedIn] = useState('');
   const handleMobileMenu = () => {
     console.log('akakaka');
     setmbmenu(!mbmenu);
@@ -15,6 +16,20 @@ const Navbar = () => {
 
   const handleMobileMenuNav = () => {
     setmbmenu(!mbmenu);
+  }
+
+  useEffect(() =>{
+    console.log('props.history',props.history.location.pathname);
+    if(!!localStorage.getItem('operationType')){
+      setisLogedIn(true);
+    }else{
+      setisLogedIn(false);
+    }
+  },[props.history.location]);
+
+  const handleLogout = () => {
+    localStorage.clear();
+    props.history.push('/');
   }
 
   useScrollPosition(
@@ -91,6 +106,23 @@ const Navbar = () => {
                         Contact
                       </div>
                     </Link>
+                    {
+                      props.history.location.pathname == '/special-offers' ?
+                        <div
+                          onClick={() => handleLogout()}
+                          className="cursor-pointer text-base md:text-sm mt-1 font-medium text-white hover:text-gray-300 fnt-sty-nunito"
+                        >
+                          Logout
+                        </div>
+                        :
+                        <Link to='sign-in'>
+                          <div
+                            className="text-base md:text-sm mt-1 font-medium text-white hover:text-gray-300 fnt-sty-nunito"
+                          >
+                            Sign In
+                          </div>
+                        </Link>
+                    }
                   </nav>
                 </div>
               </div>
@@ -448,4 +480,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default withRouter(Navbar);

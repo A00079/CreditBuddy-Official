@@ -67,6 +67,7 @@ const Creditform = (props) => {
             firebase.firestore().collection('user_form_credit_card')
                 .add(data)
                 .then(function (docRef) {
+                    localStorage.setItem('email',input.email);
                     document.getElementById('firstname').value = "";
                     document.getElementById('lastname').value = "";
                     document.getElementById('contact').value = "";
@@ -76,6 +77,7 @@ const Creditform = (props) => {
                     setSelectedOption('Gender');
                     alert('Details saved successfully');
                     setIsLoading(false);
+                    props.history.push('/special-campaign-offers');
                 })
                 .catch(function (error) {
                     setIsLoading(false);
@@ -90,7 +92,7 @@ const Creditform = (props) => {
 
     return (
         <React.Fragment>
-            <section className="text-gray-600 body-font">
+            <section id='campaign-form' className="text-gray-600 body-font">
                 <div className="container px-5 py-8 mx-auto flex flex-wrap items-center">
                     <div className="lg:w-1/2 md:w-1/2 md:pr-16 lg:pr-10 pr-0">
                         <h1 className="title-font sm:text-4xl text-3xl mb-4 font-bold text-indigo-600 fnt-sty-nunito">Credit Card

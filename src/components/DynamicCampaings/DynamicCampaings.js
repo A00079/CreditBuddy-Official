@@ -6,6 +6,8 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import TextField from '@mui/material/TextField';
 import firebase from '../../utils/firebase';
+import { Link, animateScroll as scroll } from "react-scroll";
+
 export default function DynamicCampaings(props) {
     const [open, setOpen] = React.useState(false);
     const [cardsDetailData, setCardsDetailData] = React.useState([]);
@@ -74,7 +76,7 @@ export default function DynamicCampaings(props) {
 
     useEffect(() => {
         fetchCampaings();
-    }, [])
+    }, [props.campaignName])
 
     const fetchCampaings = () => {
         if (!!props.campaignName) {
@@ -110,10 +112,14 @@ export default function DynamicCampaings(props) {
         <>
             <section className="text-gray-600 body-font">
                 <div className="container px-5 py-24 mx-auto">
-                    <div className="flex flex-col text-center w-full mb-20">
-                        <h1 className="text-2xl font-medium title-font mb-4 text-gray-900 uppercase tracking-widest fnt-sty-nunito">WE FOUND THE BEST {!!props.campaignName ? props.campaignName : ''} </h1>
-                        <p className="lg:w-2/3 mx-auto leading-relaxed text-base fnt-sty-nunito">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
-                    </div>
+                    {
+                        !props.hideHeading ?
+                            <div className="flex flex-col text-center w-full mb-20">
+                                <h1 className="text-2xl font-medium title-font mb-4 text-gray-900 uppercase tracking-widest fnt-sty-nunito">WE FOUND THE BEST {!!props.campaignName ? props.campaignName : ''} </h1>
+                                <p className="lg:w-2/3 mx-auto leading-relaxed text-base fnt-sty-nunito">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
+                            </div> : ""
+                    }
+
                     <div className="grid grid-cols-12 gap-4">
                         {
                             cardsDetailData.length !== 0 && cardsDetailData.map((el, index) => {
@@ -141,7 +147,14 @@ export default function DynamicCampaings(props) {
                                                                 Object.keys(el).map((objKeys) => {
                                                                     return (
                                                                         objKeys !== 'id' && objKeys !== 'campaignimg' && objKeys !== 'actionlink' && objKeys !== 'campaignname' && objKeys !== 'formlink' && objKeys !== 'campaigntype' ?
-                                                                            <h3 className="col-span-6 text-blue-500 text-sm fnt-sty-nunito"><span className="text-gray-500 font-bold text-xs fnt-sty-nunito uppercase">{objKeys}</span> {el[objKeys]}</h3>
+                                                                            <h3 className={`${props.hideHeading ? 'col-span-12' : 'col-span-6'} text-blue-500 text-sm fnt-sty-nunito`}>
+                                                                                <div className='flex flex-col items-start'>
+                                                                                    <p className="text-gray-500 font-bold text-xs fnt-sty-nunito uppercase">
+                                                                                        {objKeys}
+                                                                                    </p>
+                                                                                    <p>{el[objKeys]}</p>
+                                                                                </div>
+                                                                            </h3>
                                                                             : ""
                                                                     )
                                                                 })
@@ -149,11 +162,21 @@ export default function DynamicCampaings(props) {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className="mt-2 border-t border-gray-400 w-full border-dashed flex justify-end items-end">
+                                                <div className="mt-4 border-t border-gray-400 w-full border-dashed flex justify-end items-end">
                                                     <span className="inline-flex">
-                                                        <button onClick={() => handleFormOpen(el)} className="mt-2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-xs">
-                                                            Apply Now
-                                                        </button>
+                                                        <Link
+                                                            to='campaign-form'
+                                                            spy={true}
+                                                            smooth={true}
+                                                            offset={-70}
+                                                            duration={900}
+                                                        >
+                                                            {/* <button onClick={() => handleFormOpen(el)} */}
+                                                            <button
+                                                                className="mt-2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-xs">
+                                                                Apply Now
+                                                            </button>
+                                                        </Link>
                                                     </span>
                                                 </div>
                                             </div>
@@ -161,6 +184,15 @@ export default function DynamicCampaings(props) {
                                     </div>
                                 )
                             })
+                        }
+                    </div>
+                    <div className='w-full text-center'>
+                        {
+                            cardsDetailData.length == 0 ?
+                                <div className='flex flex-col items-center'>
+                                    <svg className="w-16 h-16 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01" /></svg>
+                                    <p className='text-lg mt-4 font-bold text-red-500'>No Data</p>
+                                </div> : ""
                         }
                     </div>
                 </div>
