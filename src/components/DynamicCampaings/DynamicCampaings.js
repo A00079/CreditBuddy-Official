@@ -7,8 +7,9 @@ import DialogTitle from '@mui/material/DialogTitle';
 import TextField from '@mui/material/TextField';
 import firebase from '../../utils/firebase';
 import { Link, animateScroll as scroll } from "react-scroll";
+import { withRouter } from "react-router";
 
-export default function DynamicCampaings(props) {
+const DynamicCampaings = (props) => {
     const [open, setOpen] = React.useState(false);
     const [cardsDetailData, setCardsDetailData] = React.useState([]);
     const [selectedCampCardDetails, setSelectedCampCardDetails] = useState('');
@@ -138,7 +139,6 @@ export default function DynamicCampaings(props) {
                                                             <h2 className="w-full text-left title-font font-bold text-md text-indigo-700 fnt-sty-nunito">{el.campaignname}</h2>
                                                             <h2 className="w-full text-left title-font font-bold text-xs text-gray-500 fnt-sty-nunito">{el.campaigntype}</h2>
                                                         </div>
-
                                                     </div>
                                                     <div className='flex flex-row justify-between items-center h-24'>
                                                         <img alt="team" className="bg-gray-200 rounded-md flex-shrink-0 rounded-lg w-36 object-cover object-center sm:mb-0 mb-4 p-2" src={el.campaignimg} />
@@ -164,19 +164,28 @@ export default function DynamicCampaings(props) {
                                                 </div>
                                                 <div className="mt-4 border-t border-gray-400 w-full border-dashed flex justify-end items-end">
                                                     <span className="inline-flex">
-                                                        <Link
-                                                            to='campaign-form'
-                                                            spy={true}
-                                                            smooth={true}
-                                                            offset={-70}
-                                                            duration={900}
-                                                        >
-                                                            {/* <button onClick={() => handleFormOpen(el)} */}
-                                                            <button
-                                                                className="mt-2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-xs">
-                                                                Apply Now
-                                                            </button>
-                                                        </Link>
+                                                        {
+                                                            props.history.location.pathname == '/special-campaign-offers' ?
+                                                                <a href={el.actionlink}
+                                                                    target="_blank"
+                                                                    className="mt-2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-xs">
+                                                                    Apply Now
+                                                                </a >
+                                                                :
+                                                                <Link
+                                                                    to='campaign-form'
+                                                                    spy={true}
+                                                                    smooth={true}
+                                                                    offset={-70}
+                                                                    duration={900}
+                                                                >
+                                                                    {/* <button onClick={() => handleFormOpen(el)} */}
+                                                                    <button
+                                                                        className="mt-2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-xs">
+                                                                        Apply Now
+                                                                    </button>
+                                                                </Link>
+                                                        }
                                                     </span>
                                                 </div>
                                             </div>
@@ -257,3 +266,5 @@ export default function DynamicCampaings(props) {
         </>
     )
 }
+
+export default withRouter(DynamicCampaings);
