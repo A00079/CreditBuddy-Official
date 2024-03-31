@@ -1,0 +1,2 @@
+body{padding:0;margin:0;font-family:"Luckiest Guy",cursive}.zIndexNegative{z-index:-1!important}.fnt-sty-nunito{font-family:Nunito!important}.loancontainerhiden{display:none}.loancontainer:hover+.loancontainerhiden,.loancontainerhiden:hover{display:block}.vert-move{animation:mover .7s infinite alternate}@keyframes mover{0%{transform:translateY(0)}to{transform:translateY(-8px)}}
+/*# sourceMappingURL=main.92e59253.chunk.css.map */
