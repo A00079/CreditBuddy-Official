@@ -22,7 +22,6 @@ const SignIn = (props) => {
         setInput({ ...input, [name]: value });
     };
     const handleFormSubmit = () => {
-        console.log('firebase', firebase);
         try {
             firebase.auth().signInWithEmailAndPassword(input.email, input.password)
                 .then(result => {
@@ -30,7 +29,8 @@ const SignIn = (props) => {
                     localStorage.setItem('email',result.user.email);
                     localStorage.setItem('uid',result.user.uid);
                     alert('Login succesfully...');
-                    props.history.push('/special-offers');
+                    // props.history.push('/special-offers');
+                    props.history.push('/special-campaign-offers');
                 }).catch(error => {
                     console.log("Error --->", error);
                 });
