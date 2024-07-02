@@ -13,6 +13,7 @@ import SignUp from "./pages/SignUp";
 import ContactUs from "./pages/ContactUs";
 import SpecialOffersCampaigns from "./pages/SpecialOffersCampaigns";
 import SpecialOffers from "./pages/SpecialOffers";
+import CampaignCustomer from "./pages/CampaignCustomer";
 
 import { WithLayoutRoute } from "./routers";
 
@@ -85,6 +86,12 @@ function Routes() {
           path="/special-offers"
           layout={LandingPageLayout}
           component={SpecialOffers}
+        />
+        <WithLayoutRoute
+          exact
+          path="/customer"
+          layout={LandingPageLayout}
+          component={CampaignCustomer}
         />
       </Switch>
     </Router>
