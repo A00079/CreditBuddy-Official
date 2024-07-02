@@ -1,23 +1,64 @@
 import React, { useEffect, useState } from 'react'
+import firebase from '../../utils/firebase';
+import fb from 'firebase/app';
+import 'firebase/firestore';
 
 function CampaignCustomer() {
     const [input, setInput] = useState({});
+    const [affiliateId, setAffiliateId] = useState('');
+    const [campaignId, setCampaignId] = useState('');
     const [currentScreen,setCurrentScreen] = useState(1);
     useEffect(()=>{
         const searchParams = new URLSearchParams(window.location.search);
-        const offer_id = searchParams.get('offer_id');
-        const campaignId = searchParams.get('campaignId');
-        console.log('offer_id',offer_id);
-        console.log('campaignId',campaignId);
+        const aff_id = searchParams.get('aff_id');
+        const campaignId = searchParams.get('campaign_id');
+        setAffiliateId(aff_id);
+        setCampaignId(campaignId);
     },[])
-    const handleScreenChange = ()=>{
+    const handleScreenChange = (submitData)=>{
         setCurrentScreen(currentScreen + 1);
-        console.log('input',input);
+        const currentDate = new Date();
+        const futureDate = new Date(currentDate);
+        futureDate.setDate(currentDate.getDate() + 15);
+        const formattedDate = futureDate.toLocaleDateString();
+        if (submitData) {
+            let vObj = {
+                'dateOfBirth': input.dateofbirth,
+                'emailId': input.email_id,
+                'employmentType': input.emp_type,
+                'fullName': input.full_name,
+                'incomeMode': input.incom_mode,
+                'pancard': input.pancard,
+                'phoneNumber': input.phone_number.toString(),
+                'pincode': input.pincode
+            }
+            firebase.collection('customers').doc(vObj.phoneNumber).set(vObj)
+            .then(() => {
+                firebase.collection('customers').doc(vObj.phoneNumber).collection(affiliateId).doc().set({
+                    'campaignId': campaignId,
+                    'createdOn': new Date().toLocaleDateString(),
+                    'estimatedDate':formattedDate,
+                    'status':'Shared Link',
+                    'statusId':'1'
+                }).then(()=>{
+                    const docRef = firebase.collection('userDetails').doc(affiliateId);
+                    docRef.update({
+                        customerList: fb.firestore.FieldValue.arrayUnion(vObj.phoneNumber),
+                    }).then(()=>{
+                        console.log('Document and collection successfully written!');
+                    });
+                })
+            })
+            .catch((error) => {
+                console.error('Error adding document: ', error);
+            });
+        }
     }
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setInput({ ...input, [name]: value });
+
     };
 
     return (
@@ -128,7 +169,7 @@ function CampaignCustomer() {
                 </div>
                 <div className="w-full mt-20">
                     <div className="w-full">
-                    <button onClick={()=> handleScreenChange()} className="w-full shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+                    <button onClick={()=> handleScreenChange(true)} className="w-full shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
                         Continue
                     </button>
                     </div>

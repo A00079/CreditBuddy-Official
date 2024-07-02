@@ -42,15 +42,24 @@ import firestore from "firebase/firestore";
 
 const settings = {timestampsInSnapshots: true};
 
-const firebaseConfig = firebase.initializeApp({
-  apiKey: "AIzaSyCgiWzhiemCHiQx3FireYhwnb9Hhf0R3OQ",
-  authDomain: "creditbuddy-official-2024.firebaseapp.com",
-  projectId: "creditbuddy-official-2024",
-  storageBucket: "creditbuddy-official-2024.appspot.com",
-  messagingSenderId: "176386899031",
-  appId: "1:176386899031:web:4a02fb5957da37cbef3712"
-});
+// const firebaseConfig = firebase.initializeApp({
+//   apiKey: "AIzaSyCgiWzhiemCHiQx3FireYhwnb9Hhf0R3OQ",
+//   authDomain: "creditbuddy-official-2024.firebaseapp.com",
+//   projectId: "creditbuddy-official-2024",
+//   storageBucket: "creditbuddy-official-2024.appspot.com",
+//   messagingSenderId: "176386899031",
+//   appId: "1:176386899031:web:4a02fb5957da37cbef3712"
+// });
 
-firebase.firestore().settings(settings);
+const firebaseConfig = {
+  apiKey: "AIzaSyA49XV1PbGc6SL99vxZFPCSI13GIVnlNr4",
+  authDomain: "rightways-financeapp.firebaseapp.com",
+  projectId: "rightways-financeapp",
+  storageBucket: "rightways-financeapp.appspot.com",
+  messagingSenderId: "938392043588",
+  appId: "1:938392043588:web:e173ff399d6635cda87c11"
+};
+firebase.initializeApp(firebaseConfig);
+var db = firebase.firestore();
 
-export default firebaseConfig;
+export default db;
