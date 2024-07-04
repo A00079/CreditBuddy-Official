@@ -47,6 +47,9 @@ function CampaignCustomer() {
                 }
             });
         }
+        if (submitData == 'emp_detail') {
+            setCurrentScreen(currentScreen + 1);
+        }
         if (submitData == 'add_customer') {
             firebase.collection('campaigns').doc(campaignId).get().then((querySnapshot)=>{
                 let campaignVobj = querySnapshot.data();
@@ -67,6 +70,7 @@ function CampaignCustomer() {
                         docRef.update({
                             customerList: fb.firestore.FieldValue.arrayUnion(vObj.phoneNumber),
                         }).then(()=>{
+                            setCurrentScreen(currentScreen + 1);
                             console.log('Document and collection successfully written!');
                         });
                     })
@@ -152,7 +156,7 @@ function CampaignCustomer() {
                 </div>
                 <div className="w-full mt-20">
                     <div className="w-full">
-                    <button onClick={()=> handleScreenChange()} className="w-full shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+                    <button onClick={()=> handleScreenChange('emp_detail')} className="w-full shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
                         Continue
                     </button>
                     </div>
