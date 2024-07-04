@@ -15,43 +15,67 @@ function CampaignCustomer() {
         setAffiliateId(aff_id);
         setCampaignId(campaignId);
     },[])
-    const handleScreenChange = (submitData)=>{
-        setCurrentScreen(currentScreen + 1);
+    const handleScreenChange = async (submitData)=>{
         const currentDate = new Date();
         const futureDate = new Date(currentDate);
         futureDate.setDate(currentDate.getDate() + 15);
         const formattedDate = futureDate.toLocaleDateString();
-        if (submitData) {
-            let vObj = {
-                'dateOfBirth': input.dateofbirth,
-                'emailId': input.email_id,
-                'employmentType': input.emp_type,
-                'fullName': input.full_name,
-                'incomeMode': input.incom_mode,
-                'pancard': input.pancard,
-                'phoneNumber': input.phone_number.toString(),
-                'pincode': input.pincode
-            }
-            firebase.collection('customers').doc(vObj.phoneNumber).set(vObj)
-            .then(() => {
-                firebase.collection('customers').doc(vObj.phoneNumber).collection(affiliateId).doc().set({
-                    'campaignId': campaignId,
-                    'createdOn': new Date().toLocaleDateString(),
-                    'estimatedDate':formattedDate,
-                    'status':'Shared Link',
-                    'statusId':'1'
-                }).then(()=>{
-                    const docRef = firebase.collection('userDetails').doc(affiliateId);
-                    docRef.update({
-                        customerList: fb.firestore.FieldValue.arrayUnion(vObj.phoneNumber),
-                    }).then(()=>{
-                        console.log('Document and collection successfully written!');
-                    });
-                })
-            })
-            .catch((error) => {
-                console.error('Error adding document: ', error);
+        let vObj = {
+            'dateOfBirth': input.dateofbirth,
+            'emailId': input.email_id,
+            'employmentType': input.emp_type,
+            'fullName': input.full_name,
+            'incomeMode': input.incom_mode,
+            'pancard': input.pancard,
+            'phoneNumber': input.phone_number.toString(),
+            'pincode': input.pincode
+        }
+        if (submitData == 'prefill') {
+            firebase.collection('customers').doc(vObj.phoneNumber).get()
+            .then(docSnapshot => {
+                if (docSnapshot.exists) {
+                    firebase.collection('customers').doc(vObj.phoneNumber).collection(affiliateId).doc(campaignId).get().then((docSnap)=>{
+                        if (docSnap.exists) {
+                            setCurrentScreen(1);
+                            alert('You already applied for this offer.');
+                            return;
+                        }
+                    })
+                    // console.log('Document found...');
+                }else{
+                    setCurrentScreen(currentScreen + 1);
+                }
             });
+        }
+        if (submitData == 'add_customer') {
+            firebase.collection('campaigns').doc(campaignId).get().then((querySnapshot)=>{
+                let campaignVobj = querySnapshot.data();
+                firebase.collection('customers').doc(vObj.phoneNumber).set(vObj)
+                .then(() => {
+                    firebase.collection('customers').doc(vObj.phoneNumber).collection(affiliateId).doc(campaignId).set({
+                        'campaignId': campaignId,
+                        'campaignName': campaignVobj.campaignName,
+                        'campaignImg': campaignVobj.campaignImg,
+                        'campaignTitle': campaignVobj.campaignTitle,
+                        'campaignAmount': campaignVobj.amount,
+                        'createdOn': new Date().toLocaleDateString(),
+                        'estimatedDate':formattedDate,
+                        'status':'Shared Link',
+                        'statusId':'1'
+                    }).then(()=>{
+                        const docRef = firebase.collection('userDetails').doc(affiliateId);
+                        docRef.update({
+                            customerList: fb.firestore.FieldValue.arrayUnion(vObj.phoneNumber),
+                        }).then(()=>{
+                            console.log('Document and collection successfully written!');
+                        });
+                    })
+                })
+                .catch((error) => {
+                    console.error('Error adding document: ', error);
+                });
+            });
+            
         }
     }
 
@@ -87,7 +111,7 @@ function CampaignCustomer() {
                 </div>
                 <div className="w-full mt-20">
                     <div className="w-full">
-                    <button onClick={()=> handleScreenChange()} className="w-full shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+                    <button onClick={()=> handleScreenChange('prefill')} className="w-full shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
                         Continue
                     </button>
                     </div>
@@ -144,7 +168,7 @@ function CampaignCustomer() {
                     </label>
                     </div>
                     <div className="md:w-2/3">
-                    <input onChange={handleInputChange} name="pancard" className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="pancode" type="number"  />
+                    <input onChange={handleInputChange} name="pancard" className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="pancode" type="text"  />
                     </div>
                 </div>
                 <div className="md:flex md:items-center mb-6">
@@ -169,7 +193,7 @@ function CampaignCustomer() {
                 </div>
                 <div className="w-full mt-20">
                     <div className="w-full">
-                    <button onClick={()=> handleScreenChange(true)} className="w-full shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+                    <button onClick={()=> handleScreenChange('add_customer')} className="w-full shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
                         Continue
                     </button>
                     </div>
