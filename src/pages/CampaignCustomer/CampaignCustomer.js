@@ -64,6 +64,7 @@ function CampaignCustomer() {
                         'createdOn': new Date().toLocaleDateString(),
                         'estimatedDate':formattedDate,
                         'status':'Shared Link',
+                        'statusDiscription':'Ask your customer to start the application process using the link shared by you.',
                         'statusId':'1'
                     }).then(()=>{
                         const docRef = firebase.collection('userDetails').doc(affiliateId);
