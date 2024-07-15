@@ -16,10 +16,6 @@ function CampaignCustomer() {
         setCampaignId(campaignId);
     },[])
     const handleScreenChange = async (submitData)=>{
-        const currentDate = new Date();
-        const futureDate = new Date(currentDate);
-        futureDate.setDate(currentDate.getDate() + 15);
-        const formattedDate = futureDate.toLocaleDateString();
         let vObj = {
             'dateOfBirth': input.dateofbirth,
             'emailId': input.email_id,
@@ -39,6 +35,13 @@ function CampaignCustomer() {
                             setCurrentScreen(1);
                             alert('You already applied for this offer.');
                             return;
+                        }else{
+                            let existingUserData = {
+                                ...docSnapshot.data(),
+                            }
+                            addCustomer(existingUserData,false);
+                            setCurrentScreen(4);
+                            return;
                         }
                     })
                     // console.log('Document found...');
@@ -51,37 +54,53 @@ function CampaignCustomer() {
             setCurrentScreen(currentScreen + 1);
         }
         if (submitData == 'add_customer') {
-            firebase.collection('campaigns').doc(campaignId).get().then((querySnapshot)=>{
-                let campaignVobj = querySnapshot.data();
-                firebase.collection('customers').doc(vObj.phoneNumber).set(vObj)
-                .then(() => {
-                    firebase.collection('customers').doc(vObj.phoneNumber).collection(affiliateId).doc(campaignId).set({
-                        'campaignId': campaignId,
-                        'campaignName': campaignVobj.campaignName,
-                        'campaignImg': campaignVobj.campaignImg,
-                        'campaignTitle': campaignVobj.campaignTitle,
-                        'campaignAmount': campaignVobj.amount,
-                        'createdOn': new Date().toLocaleDateString(),
-                        'estimatedDate':formattedDate,
-                        'status':'Shared Link',
-                        'statusDiscription':'Ask your customer to start the application process using the link shared by you.',
-                        'statusId':'1'
-                    }).then(()=>{
-                        const docRef = firebase.collection('userDetails').doc(affiliateId);
-                        docRef.update({
-                            customerList: fb.firestore.FieldValue.arrayUnion(vObj.phoneNumber),
-                        }).then(()=>{
-                            setCurrentScreen(currentScreen + 1);
-                            console.log('Document and collection successfully written!');
-                        });
-                    })
-                })
-                .catch((error) => {
-                    console.error('Error adding document: ', error);
-                });
-            });
-            
+            addCustomer(vObj,false);
+            setCurrentScreen(4);
         }
+    }
+
+    const addCustomer = (userData,nextScreen) =>{
+        const currentDate = new Date();
+        const futureDate = new Date(currentDate);
+        futureDate.setDate(currentDate.getDate() + 15);
+        const formattedDate = futureDate.toLocaleDateString();
+        firebase.collection('campaigns').doc(campaignId).get().then((querySnapshot)=>{
+            let campaignVobj = querySnapshot.data();
+            firebase.collection('customers').doc(userData.phoneNumber).set(userData)
+            .then(() => {
+                firebase.collection('customers').doc(userData.phoneNumber).collection(affiliateId).doc(campaignId).set({
+                    'campaignId': campaignId,
+                    'campaignName': campaignVobj.campaignName,
+                    'campaignImg': campaignVobj.campaignImg,
+                    'campaignTitle': campaignVobj.campaignTitle,
+                    'campaignAmount': campaignVobj.amount,
+                    'createdOn': new Date().toLocaleDateString(),
+                    'estimatedDate':formattedDate,
+                    'customerName': userData.fullName,
+                    'customerPhone': userData.phoneNumber,
+                    'statusOneDescr':'Ask your customer to start the application process using the link shared by you.',
+                    'statusTwoDescr': 'Your application is in progress.please ask your customer to take further actions',
+                    'statusThreeDescr': 'Congratulations your application is completed. we will receive an reward soon.',
+                    'statusFourDescr': 'Your application is rejected due to some reasons.please check with your customer.',
+                    'status':'Link Shared',
+                    'statusDiscription':'Ask your customer to start the application process using the link shared by you.',
+                    'statusId':'1'
+                }).then(()=>{
+                    const docRef = firebase.collection('userDetails').doc(affiliateId);
+                    docRef.update({
+                        customerList: fb.firestore.FieldValue.arrayUnion(userData.phoneNumber),
+                    }).then(()=>{
+                        if (nextScreen) {
+                            setCurrentScreen(currentScreen + 1);
+                        }
+                        console.log('Document and collection successfully written!');
+                    });
+                })
+            })
+            .catch((error) => {
+                console.error('Error adding document: ', error);
+            });
+        });
     }
 
     const handleInputChange = (e) => {
